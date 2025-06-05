@@ -1,91 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anudeep Goud | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0ff;
+      --bg: #0a0a1a;
+      --text: #e0f7fa;
+      --accent: #0077ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #000000cc;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: #111822;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #0ff5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #000;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#labs">Labs</a>
+    <a href="#certifications">Certs</a>
+    <a href="#scripts">Scripts</a>
+    <a href="#writeups">Write-ups</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>Anudeep Goud</h1>
-    <p>Cybersecurity Enthusiast | Ethical Hacker | Network Defender</p>
+    <p>Cybersecurity Enthusiast | Threat Analyst | Ethical Hacker</p>
   </header>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I'm passionate about cybersecurity, ethical hacking, and protecting digital spaces. I’ve earned certifications, done labs on TryHackMe & Hack The Box, and love learning!</p>
+  <section id="about">
+    <h2>About</h2>
+    <p>I’m Anudeep, passionate about cybersecurity and solving real-world problems. With certifications like CompTIA Security+, IBM Cyber Analyst, and hands-on experience through TryHackMe and Hack The Box, I aim to secure the digital world one packet at a time.</p>
   </section>
 
-  <section class="projects">
-    <h2>My Projects</h2>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card"><h3>IT Support</h3><p>Ticket automation, endpoint security, and user training modules.</p></div>
+      <div class="card"><h3>Cybersecurity</h3><p>Web app penetration tests, firewall configs, risk assessments.</p></div>
+      <div class="card"><h3>Combined Projects</h3><p>End-to-end security implementation in enterprise environments.</p></div>
+    </div>
+  </section>
+
+  <section id="labs">
+    <h2>Labs</h2>
+    <div class="grid">
+      <div class="card"><h3>TryHackMe</h3><p>100+ rooms completed. Topics: Linux, privilege escalation, networks.</p></div>
+      <div class="card"><h3>Let's Defend</h3><p>Blue team experience: SIEM, alerts triage, incident response.</p></div>
+      <div class="card"><h3>HomeLab</h3><p>Own-built lab for Red Team/Blue Team simulations and script testing.</p></div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
     <ul>
-      <li><strong>IoT Attacks & Prevention</strong> - Researched common cyber attacks in IoT & solutions.</li>
-      <li><strong>VPN Protocols Study</strong> - Explored different VPN protocols and their security.</li>
-      <li><strong>HackTheBox Rooms</strong> - Solved over 100 hacking labs with writeups.</li>
+      <li>Google Cybersecurity Certificate</li>
+      <li>IBM Cybersecurity Analyst</li>
+      <li>CompTIA Security+</li>
+      <li>ITIL Foundation</li>
     </ul>
   </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:anudeepgoude@gmail.com">anudeepgoude@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/anudeepgoud" target="_blank">in/anudeepgoud</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+  <section id="scripts">
+    <h2>Scripts & Rules</h2>
+    <p>Includes automated bash scripts, Python tools, and detection rule sets for SIEM/XDR systems.</p>
   </section>
 
-  <footer>
-    <p>© 2025 Anudeep Goud. All rights reserved.</p>
-  </footer>
+  <section id="writeups">
+    <h2>Write-Ups</h2>
+    <p>Documented walk-throughs for THM, HTB, custom CTFs, and incident analysis reports.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Insights on threat trends, blue team methodologies, and security philosophy rooted in Advaita Vedanta.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:anudeepgoude@gmail.com" style="color:var(--primary)">anudeepgoude@gmail.com</a></p>
+    <p>Phone: <a href="tel:+61431523847" style="color:var(--primary)">+61 431 523 847</a></p>
+    <p>Location: Sydney, Australia</p>
+  </section>
+
+  <footer>&copy; 2025 Anudeep Goud | anulabs.co</footer>
 </body>
 </html>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0f0f0f;
-  color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background: #1a1a1a;
-  padding: 30px;
-  text-align: center;
-  border-bottom: 2px solid #00ffcc;
-}
-
-h1 {
-  color: #00ffcc;
-  font-size: 3em;
-}
-
-h2 {
-  color: #00ffcc;
-}
-
-section {
-  padding: 30px;
-  margin: 10px 20px;
-  background-color: #1f1f1f;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00ffcc44;
-}
-
-ul {
-  list-style-type: circle;
-}
-
-a {
-  color: #00ffcc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #111;
-  border-top: 2px solid #00ffcc;
-}
-
