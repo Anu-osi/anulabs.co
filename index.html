@@ -1,289 +1,108 @@
+File: index.html
+Description: Landing page with top-level cyber vibes animations, highlighting content.
+=========================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anudeep Goud | Elite Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary-color: #00ffab;
-      --accent-color: #00ffe7;
-      --bg-dark: #0f0f0f;
-      --text-light: #e0e0e0;
-      --text-muted: #777;
-      --highlight-bg: rgba(0, 255, 171, 0.15);
-      --font-family: 'Space Grotesk', sans-serif;
-    }
-
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-dark);
-      color: var(--text-light);
-      overflow-x: hidden;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0; left: 0;
-      background: linear-gradient(90deg, #000000dd 0%, #00ffab44 100%);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 9999;
-      box-shadow: 0 0 10px var(--primary-color);
-    }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--primary-color);
-      letter-spacing: 2px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    nav a {
-      color: var(--accent-color);
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 2rem;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      left: 0;
-      bottom: -5px;
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover, nav a:focus {
-      color: white;
-    }
-
-    nav a:hover::after, nav a:focus::after {
-      width: 100%;
-    }
-
-    .hero {
-      min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1634666793440-6b36a515eb77?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      position: relative;
-      padding: 0 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: var(--primary-color);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15, 15, 15, 0.85);
-      z-index: 0;
-    }
-
-    .hero h2 {
-      position: relative;
-      font-size: 3rem;
-      max-width: 800px;
-      margin-bottom: 1rem;
-      z-index: 1;
-      line-height: 1.2;
-      font-weight: 700;
-      text-shadow: 0 0 10px var(--primary-color);
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: textGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes textGlow {
-      0% { text-shadow: 0 0 15px #00ffabaa; }
-      100% { text-shadow: 0 0 35px #00ffe7ff; }
-    }
-
-    .hero p {
-      position: relative;
-      font-size: 1.2rem;
-      max-width: 600px;
-      color: var(--text-muted);
-      margin-top: 1rem;
-      z-index: 1;
-    }
-
-    main {
-      padding: 6rem 2rem 4rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 5rem;
-      background: var(--highlight-bg);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffab22;
-      transition: box-shadow 0.4s ease;
-    }
-
-    section:hover {
-      box-shadow: 0 0 30px #00ffe733;
-    }
-
-    h3 {
-      font-size: 2.4rem;
-      color: var(--accent-color);
-      margin-bottom: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    li {
-      font-size: 1.15rem;
-      padding-left: 1.4rem;
-      position: relative;
-      margin-bottom: 1rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
-      font-weight: 900;
-      font-size: 1.2rem;
-      top: 0;
-      line-height: 1;
-    }
-
-    footer {
-      padding: 2rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      background: #111;
-      margin-top: 3rem;
-      user-select: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      main {
-        padding-top: 4rem;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anu | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://unpkg.com/gsap@3.6.1/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
-<header>
-  <h1 tabindex="0" aria-label="Homepage">Anudeep Goud</h1>
-  <nav aria-label="Primary navigation">
-    <a href="index.html#skills">Skills</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- Header / Navigation -->
+  <header id="header">
+    <div class="container">
+      <h1 class="logo" data-aos="fade-down" data-aos-duration="1200">Anu</h1>
+      <nav data-aos="fade-down" data-aos-duration="1200" data-aos-delay="200">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="certs.html">Certifications</a></li>
+          <li><a href="scripts.html">Scripts & Rules</a></li>
+          <li><a href="writeups.html">Write-Ups</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
 
-<section class="hero" role="banner" aria-label="Introduction">
-  <h2>Building the Next Layer of Human-Focused Digital Defense</h2>
-  <p>Deeply committed to cybersecurity, cloud, automation, and threat intelligence. Transforming offensive insights into bulletproof defenses with AI, scripting, and strategy.</p>
-</section>
-
-<main>
-  <section id="skills" tabindex="0">
-    <h3>⚙️ Core Skills</h3>
-    <ul>
-      <li>Threat Detection, Incident Response, SIEM & Log Correlation</li>
-      <li>Red Team Simulation: TryHackMe, Triacme, Burp Suite, Nmap</li>
-      <li>Windows AD, GPO, DNS, DHCP & Advanced OSI/TCP Stack Debugging</li>
-      <li>Scripting in Python, Bash & PowerShell for Automation & Defense</li>
-    </ul>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content" data-aos="zoom-in" data-aos-duration="1500">
+      <h2>Next-Gen Cyber Defender</h2>
+      <p>AI-infused Network Security | Red & Blue Team Tactician | Offensive & Defensive Mastery</p>
+      <a href="projects.html" class="btn-primary" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">Explore Projects</a>
+    </div>
   </section>
 
-  <section id="certifications" tabindex="0">
-    <h3>🎓 Certifications</h3>
-    <ul>
-      <li>Google Cybersecurity Professional Certificate – SOC I & II, Triage & Alerts</li>
-      <li>IBM Cybersecurity Analyst – Threat Intelligence, MITRE ATT&CK & Compliance</li>
-      <li>CompTIA Security+ – Passed with 96%, Security Architecture & Cryptography</li>
-    </ul>
+  <!-- Highlights Section -->
+  <section id="highlights">
+    <div class="container">
+      <h3 data-aos="fade-right">🚀 Highlights</h3>
+      <div class="grid" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+        <div class="card highlight-card">
+          <h4>Elite Triacme & THM</h4>
+          <p>187 TryHackMe Rooms | 6 Triacme Pro Labs | 41 Badges</p>
+        </div>
+        <div class="card highlight-card">
+          <h4>IoT Internship @ CareerTC</h4>
+          <p>Virus Mitigation Systems | Custom Firewalls & Reverse Proxies</p>
+        </div>
+        <div class="card highlight-card">
+          <h4>Certifications</h4>
+          <p>Google & IBM Cybersecurity | CompTIA Security+ (96%) | Practeria Projects</p>
+        </div>
+        <div class="card highlight-card">
+          <h4>Home Lab Setup</h4>
+          <p>pfSense Firewall | Windows Server 2022 | Splunk SIEM | AD & SIEM Chaining</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="projects" tabindex="0">
-    <h3>🧠 Featured Projects</h3>
-    <ul>
-      <li><strong>IoT Internship @ CareerTC:</strong> Built virus mitigation systems for smart pools using custom firewall rules & reverse proxies</li>
-      <li><strong>TryHackMe Labs:</strong> 187 rooms completed — privilege escalation, malware forensics, web exploits</li>
-      <li><strong>Triacme Labs:</strong> 6 pro rooms — phishing defense, privilege abuse, firewall bypass</li>
-      <li><strong>Home Virtual Lab:</strong> pfSense firewall, Windows Server 2022, Splunk, AD & SIEM chaining</li>
-    </ul>
-  </section>
-</main>
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2025 Anudeep Goud (Anu). All Rights Reserved.</p>
+    </div>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Anudeep Goud | Elite Cybersecurity Portfolio</p>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script>
-  // GSAP Scroll Animation
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray('section').forEach(section => {
-    gsap.from(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      },
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: 'power3.out',
-      stagger: 0.2
+  <script src="assets/js/scripts.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init();
+    // Preloader logic
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.classList.add('fade-out');
+      setTimeout(() => preloader.style.display = 'none', 600);
     });
-  });
-</script>
-
+    // GSAP Animations for navigation
+    const navLinks = document.querySelectorAll('.nav-links li');
+    gsap.from(navLinks, {
+      opacity: 0,
+      y: -20,
+      stagger: 0.2,
+      duration: 1,
+      ease: 'power3.out'
+    });
+  </script>
 </body>
 </html>
-
