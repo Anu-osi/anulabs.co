@@ -10,13 +10,3 @@ const typed = new Typed('#typed-text', {
   backSpeed: 30,
   loop: true
 });
-// Typed.js already here
-
-// Toggle Mode
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('mode-toggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    toggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-  });
-});
