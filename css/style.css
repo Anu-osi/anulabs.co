@@ -87,3 +87,20 @@ nav a.active, nav a:hover {
   color: #ccc;
   font-size: 0.9rem;
 }
+body.light-mode {
+  background: #f5f5f5;
+  color: #222;
+}
+body.light-mode .project-card,
+body.light-mode .cert-card,
+body.light-mode .blog-card {
+  background-color: #ffffff;
+  color: #000;
+  border-left-color: #00b894;
+}
+body.light-mode nav a {
+  color: #333;
+}
+body.light-mode nav a.active {
+  color: #00b894;
+}
