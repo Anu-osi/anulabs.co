@@ -2,149 +2,973 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anudeep Goud – Hybrid Cybersecurity & IT Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anudeep Goud | IT & Cybersecurity Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    :root {
+      --primary: #00f0ff;
+      --primary-dark: #0066ff;
+      --bg: #0a0a1a;
+      --bg-light: #111822;
+      --bg-lighter: #1a2433;
+      --text: #e0f7fa;
+      --text-light: #ffffff;
+      --accent: #ff4d4d;
+      --success: #00ff88;
+      --warning: #ffcc00;
+      --cyber-blue: #00a8ff;
+      --cyber-purple: #9c27b0;
+      --neon-pink: #ff00ff;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at bottom, #0a0a1a 0%, #050a12 100%);
-      color: #a8f3ff;
-      line-height: 1.8;
-      font-size: 1.15rem;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      font-size: 1.1rem;
     }
-    header {
-      background: url('images/laptop.jpg') no-repeat center center/cover;
-      text-align: center;
-      padding: 10rem 1rem;
-      color: #00f0ff;
-      text-shadow: 0 0 10px #00f0ff;
-      animation: fadeIn 2s ease-in-out;
-    }
-    header h1 {
-      font-size: 3.5rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.6rem;
-    }
-    .section {
-      padding: 4rem 2rem;
-      animation: fadeUp 1.5s ease-in-out;
-    }
-    .section h2 {
-      color: #00f0ff;
-      border-bottom: 2px solid #00f0ff;
-      padding-bottom: 0.5rem;
-    }
-    .timeline-item {
-      margin-bottom: 2rem;
-    }
-    .cert-card {
+
+    /* Cyber Terminal Effect */
+    .cyber-terminal {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      border-top: 1px solid var(--primary);
       display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      font-family: 'JetBrains Mono', monospace;
+      overflow: hidden;
+    }
+
+    .terminal-prompt {
+      color: var(--success);
+      margin-right: 10px;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      background: var(--primary);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Matrix Rain Background */
+    .matrix-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 100%);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.5rem;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Header with Particle Effect */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(10,10,26,0.8) 0%, rgba(10,10,26,1) 100%), 
+                  url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      z-index: -2;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--primary), var(--cyber-blue), var(--primary-dark));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textGlow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      font-size: 1.5rem;
       margin-bottom: 2rem;
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 4px solid #00f0ff;
+      max-width: 700px;
+    }
+
+    .header-subtext {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--success);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--bg);
+      box-shadow: 0 0 15px var(--primary);
+    }
+
+    /* Main Sections */
+    section {
+      padding: 6rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    section:hover::before {
+      opacity: 1;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    section h2::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* About Section */
+    #about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.03);
+    }
+
+    .tech-stack {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tech-item {
+      background: var(--bg-light);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, var(--bg-light), var(--bg-lighter));
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(0, 240, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--primary), var(--cyber-purple), var(--neon-pink));
+      z-index: -1;
+      border-radius: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .stat-card:hover::before {
+      opacity: 0.7;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--success));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    /* Grid Layouts */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Cards */
+    .card {
+      background: linear-gradient(145deg, var(--bg-light), var(--bg-lighter));
+      padding: 2rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 240, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--primary), var(--cyber-purple), var(--neon-pink));
+      z-index: -1;
+      border-radius: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 240, 255, 0.2);
+    }
+
+    .card:hover::before {
+      opacity: 0.7;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--success);
+      color: var(--bg);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Experience Cards */
+    .exp-card {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--primary);
+      position: relative;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .exp-title {
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .exp-date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .exp-highlight {
+      background: rgba(0, 240, 255, 0.1);
+      padding: 1rem;
+      border-radius: 5px;
+      margin: 1rem 0;
+      border-left: 3px solid var(--success);
+    }
+
+    .exp-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-tag {
+      background: rgba(0, 240, 255, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+    }
+
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--bg-light);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 240, 255, 0.1);
+      position: relative;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+    }
+
+    .cert-img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      background: white;
       padding: 1rem;
     }
-    .cert-img {
-      width: 100px;
-      height: auto;
-      margin-right: 1rem;
+
+    .cert-content {
+      padding: 1.5rem;
     }
+
     .cert-content h3 {
-      margin: 0;
-      color: #a8f3ff;
+      margin-bottom: 0.5rem;
     }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
+
+    .cert-date {
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    .footer-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .footer-contact a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact a:hover {
+      color: var(--primary);
+    }
+
+    /* Animations */
+    @keyframes textGlow {
+      0% {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .about-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix" class="matrix-rain"></canvas>
+
+  <!-- Cyber Terminal -->
+  <div class="cyber-terminal">
+    <span class="terminal-prompt">root@anulabs:~$</span>
+    <span id="terminal-text"></span>
+    <span class="terminal-cursor"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#stats"><i class="fas fa-chart-line"></i> Stats</a>
+    <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certs</a>
+  </nav>
+
+  <!-- Header with Particle Effect -->
   <header>
-    <h1>Anudeep Goud</h1>
-    <p>IT Systems Specialist | SOC Analyst | Threat Hunter</p>
-    <p>Defending infrastructure, empowering users, mastering endpoints & adversaries</p>
+    <div class="header-bg"></div>
+    <div class="particles" id="particles"></div>
+    <h1>ANUDEEP GOUD</h1>
+    <p class="header-subtext">> IT & Cybersecurity Specialist | Top 4% TryHackMe | Security+ Certified</p>
+    <p>Bridging technical support expertise with cutting-edge security operations</p>
+    <div class="header-buttons">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="#certifications" class="btn btn-outline">See Certifications</a>
+    </div>
   </header>
 
-  <section class="section">
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
-    <p>I’m Anudeep, a cybersecurity and IT support enthusiast with a deep interest in systems, security, and real-world operations. Over the last 18 months, I’ve explored both support-level problem solving and defensive cyber techniques. In that time, I’ve built a home lab simulating Windows AD and SOC alerting tools, completed 187+ labs on TryHackMe (earning 21+ badges), and tackled 61 Hack The Box machines. <br><br>
-    These labs have strengthened my troubleshooting logic, alert analysis workflow, and incident response intuition. I enjoy resolving user issues and learning how attackers move. My work is about being calm under pressure, documenting clearly, and understanding both people and systems. <br><br>
-    I’m looking for opportunities to grow inside dynamic teams where I can support users, detect threats, and bring that hybrid perspective to everyday challenges.</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm Anudeep — a technically skilled professional with expertise in both IT support and cybersecurity fundamentals.</p>
+        
+        <p>With hands-on experience in technical troubleshooting and security best practices, I've developed a unique blend of skills that bridge user support with security awareness. My home lab experience includes building IT support environments with ticketing systems, remote support tools, and basic security monitoring.</p>
+        
+        <div class="tech-stack">
+          <div class="tech-item"><i class="fas fa-network-wired"></i> Technical Support</div>
+          <div class="tech-item"><i class="fas fa-shield-alt"></i> Security Fundamentals</div>
+          <div class="tech-item"><i class="fas fa-laptop-code"></i> Troubleshooting</div>
+          <div class="tech-item"><i class="fas fa-user-shield"></i> Security Awareness</div>
+          <div class="tech-item"><i class="fab fa-windows"></i> Windows Administration</div>
+          <div class="tech-item"><i class="fas fa-server"></i> Home Lab Setup</div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=500&q=80" alt="Anudeep Goud" class="profile-img">
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Experience</h2>
-    <div class="timeline-item">
-      <h3>IoT Security Intern – CareerDC</h3>
-      <p>Secured ESP32-based smart pool system with MQTT auth, hardened wireless transmission and reduced latency to <2s. Improved uptime by 27%, built layered access model, and submitted 10-page vulnerability report with mitigation steps. <br>
-      Delivered a cross-stack solution from endpoint to cloud.<br>
-      <strong>Tools:</strong> Arduino, MQTT, JSON, manual fuzzing, network trace review.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Support & Sales Ops – Woolworths Group</h3>
-      <p>Supported 500+ transactions/day across customer access, device resets, system outages, and escalations. Tackled POS issues in real time, reducing average downtime response by ~40%. <br>
-      <em>Key transferables:</em> escalation logic, endpoint visibility, uptime prioritization — now part of my SOC triage logic.</p>
+  <!-- Stats Section -->
+  <section id="stats">
+    <h2>By The Numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">Top 4%</div>
+        <div class="stat-label">TryHackMe Global Ranking</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Customer Satisfaction (Woolworths)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Technical Issues Resolved Daily</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Industry Certifications</div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">IoT Security Intern</div>
+        <div class="exp-date">2024</div>
+      </div>
+      <div class="exp-highlight">
+        <strong>Impact:</strong> Hardened MQTT system security, improving system uptime by 27% and reducing critical vulnerabilities by 42%
+      </div>
+      <p>Conducted comprehensive security assessment of IoT infrastructure, identifying and mitigating 15+ critical vulnerabilities in MQTT implementation. Developed technical documentation and security hardening guide adopted company-wide.</p>
+      <div class="exp-tech">
+        <span class="tech-tag">MQTT Security</span>
+        <span class="tech-tag">Vulnerability Assessment</span>
+        <span class="tech-tag">Network Hardening</span>
+        <span class="tech-tag">Technical Documentation</span>
+      </div>
+    </div>
+    
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">Sales Team Member | Woolworths</div>
+        <div class="exp-date">2022</div>
+      </div>
+      <div class="exp-highlight">
+        <strong>Impact:</strong> Maintained 100% customer satisfaction through technical troubleshooting and problem-solving
+      </div>
+      <p>Provided exceptional customer service with technical support components, resolving point-of-sale issues and demonstrating strong technical aptitude. Developed transferable skills in troubleshooting, customer communication, and technical problem-solving under pressure.</p>
+      <div class="exp-tech">
+        <span class="tech-tag">Technical Troubleshooting</span>
+        <span class="tech-tag">Customer Service</span>
+        <span class="tech-tag">Problem Solving</span>
+        <span class="tech-tag">POS Systems</span>
+      </div>
+    </div>
+    
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">IT Support Home Lab</div>
+        <div class="exp-date">Ongoing</div>
+      </div>
+      <div class="exp-highlight">
+        <strong>Impact:</strong> Developed practical IT support skills through hands-on lab environment
+      </div>
+      <p>Built and maintained a home lab environment to practice IT support skills including ticketing systems, remote desktop support, and basic security monitoring. Configured Windows Server environments and practiced troubleshooting common technical issues.</p>
+      <div class="exp-tech">
+        <span class="tech-tag">Windows Server</span>
+        <span class="tech-tag">Ticketing Systems</span>
+        <span class="tech-tag">Remote Support</span>
+        <span class="tech-tag">Basic Security</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
     <h2>Certifications</h2>
-    <div class="cert-card">
-      <img src="images/googleitsupport.jpg" alt="Google IT Support" class="cert-img">
-      <div class="cert-content">
-        <h3>Google IT Support</h3>
-        <p>Mastered networking basics, OS-level troubleshooting, shell scripting, system logging, and escalation handoffs. This forms the backbone of my IT-to-cyber path, especially in endpoint detection and network issue triage.</p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="https://www.comptia.org/images/default-source/uploaded-images/comptia-security-certification-logo.svg" alt="CompTIA Security+" class="cert-img">
+        <div class="cert-content">
+          <h3>CompTIA Security+</h3>
+          <div class="cert-date">Validates core security skills</div>
+          <p>Demonstrated competency in network security, threat analysis, and risk management.</p>
+        </div>
       </div>
-    </div>
-    <div class="cert-card">
-      <img src="images/securityplus.jpg" alt="Security+" class="cert-img">
-      <div class="cert-content">
-        <h3>CompTIA Security+</h3>
-        <p>Trained in vulnerability scanning, SIEM logic design, identity & access controls, cryptographic standards, and incident response. Built detection-first thinking, supported by MITRE ATT&CK fluency and blue team best practices.</p>
+      <div class="cert-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google Cybersecurity" class="cert-img">
+        <div class="cert-content">
+          <h3>Google Cybersecurity</h3>
+          <div class="cert-date">Hands-on security training</div>
+          <p>Completed intensive program covering SIEM, Python automation, and incident response.</p>
+        </div>
       </div>
-    </div>
-    <div class="cert-card">
-      <img src="images/googlecyber.jpg" alt="Google Cybersecurity" class="cert-img">
-      <div class="cert-content">
-        <h3>Google Cybersecurity Certificate</h3>
-        <p>Focused on detection, response, risk analysis, and response workflows. Hands-on SIEM labs (Splunk), role-based access planning, phishing investigation, and detection lifecycle simulation using real cases.</p>
+      <div class="cert-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google IT Support" class="cert-img">
+        <div class="cert-content">
+          <h3>Google IT Support</h3>
+          <div class="cert-date">IT fundamentals</div>
+          <p>Mastered troubleshooting, systems administration, and customer support best practices.</p>
+        </div>
       </div>
-    </div>
-    <div class="cert-card">
-      <img src="images/ibmcert.jpg" alt="IBM Cybersecurity" class="cert-img">
-      <div class="cert-content">
-        <h3>IBM Cybersecurity Analyst</h3>
-        <p>Worked through real-world alerts, PCAP breakdowns, event tracebacks, and SOC case studies. Gained clarity in alert interpretation, packet-level review, and defense-in-depth playbook logic.</p>
+      <div class="cert-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png" alt="IBM Cyber Analyst" class="cert-img">
+        <div class="cert-content">
+          <h3>IBM Cyber Analyst</h3>
+          <div class="cert-date">Security operations</div>
+          <p>Gained expertise in SOC operations, threat intelligence, and security monitoring.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Labs & Platforms</h2>
-    <div class="cert-card">
-      <img src="images/tryhackme.jpg" alt="TryHackMe Labs" class="cert-img">
-      <div class="cert-content">
-        <h3>TryHackMe (187 Labs)</h3>
-        <p>Core foundation for beginner-to-pro cyber learning: privilege escalation, password attacks, SIEM alerts, malware behavior, MITRE mapping. Played a key role in forming my detection thinking.</p>
-      </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">ANULABS</div>
+    <p>Bridging IT support with cybersecurity awareness</p>
+    <div class="footer-contact">
+      <a href="mailto:anudeepgoude@gmail.com"><i class="fas fa-envelope"></i> anudeepgoude@gmail.com</a>
+      <a href="https://anulabs.co" target="_blank"><i class="fas fa-globe"></i> anulabs.co</a>
+      <a href="https://www.linkedin.com/in/anudeep-goud-8592b4230?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2c5RkjE7RpK1GKhSrm8OUg%3D%3D" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
     </div>
-    <div class="cert-card">
-      <img src="images/hackthebox.jpg" alt="Hack The Box" class="cert-img">
-      <div class="cert-content">
-        <h3>Hack The Box (61 Machines)</h3>
-        <p>Deep hands-on engagement in lateral movement, OSINT chains, misconfig chaining, Linux & Windows privilege escalation, and custom shell handling techniques. Helped solidify adversary mindset for blue team relevance.</p>
-      </div>
-    </div>
-  </section>
+    <p style="margin-top: 2rem;">&copy; 2025 Anudeep Goud. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+    
+    const alphabet = katakana + latin + nums + symbols;
+    
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    
+    const rainDrops = [];
+    
+    for (let x = 0; x < columns; x++) {
+      rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+      
+      for (let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+        
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+    
+    setInterval(draw, 30);
+    
+    // Terminal Text Effect
+    const terminalText = document.getElementById('terminal-text');
+    const phrases = [
+      'whoami',
+      'nmap -sV target.com',
+      'python3 exploit.py --target 10.0.0.1',
+      'splunk search "index=security *"',
+      'echo "Security is a process, not a product."',
+      'sudo apt-get update && sudo apt-get upgrade',
+      'hydra -l admin -P rockyou.txt ssh://target',
+      'msfconsole -q',
+      'tail -f /var/log/syslog',
+      'python3 -c "import base64; print(base64.b64decode(\'...\'))"'
+    ];
+    let currentPhrase = 0;
+    let currentChar = 0;
+    let isDeleting = false;
+    let isWaiting = false;
+    
+    const type = () => {
+      if (isWaiting) return;
+      
+      const currentText = phrases[currentPhrase];
+      
+      if (!isDeleting && currentChar < currentText.length) {
+        terminalText.textContent = currentText.substring(0, currentChar + 1);
+        currentChar++;
+        setTimeout(type, Math.random() * 100 + 50);
+      } else if (isDeleting && currentChar > 0) {
+        terminalText.textContent = currentText.substring(0, currentChar - 1);
+        currentChar--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        
+        if (!isDeleting) {
+          currentPhrase = (currentPhrase + 1) % phrases.length;
+        }
+        
+        isWaiting = true;
+        setTimeout(() => {
+          isWaiting = false;
+          type();
+        }, 1000);
+      }
+    };
+    
+    type();
+    
+    // Particle Effect
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 50;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.width = `${Math.random() * 3 + 1}px`;
+      particle.style.height = particle.style.width;
+      particle.style.opacity = Math.random() * 0.5 + 0.1;
+      particle.style.animation = `float ${Math.random() * 5 + 3}s infinite ease-in-out ${Math.random() * 2}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
