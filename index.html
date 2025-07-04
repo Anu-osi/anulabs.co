@@ -6,7 +6,6 @@
   <title>Anudeep Goud | Elite Cybersecurity Professional</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js">
   <style>
     :root {
       --primary: #00f0ff;
@@ -83,11 +82,6 @@
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
-    }
-
-    @keyframes pulse {
-      0%, 100% { background: var(--primary); }
-      50% { background: var(--neon-pink); }
     }
 
     /* Enhanced Matrix Rain Background */
@@ -345,7 +339,7 @@
     }
 
     .about-text {
-      flex: 1;
+      flex: 2; /* Give text more space */
       position: relative;
     }
 
@@ -375,23 +369,24 @@
 
     .about-image {
       flex: 1;
-      position: relative;
-      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .profile-img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 10px;
-      border: 3px solid var(--primary);
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
-      transition: all 0.5s ease;
-      transform-style: preserve-3d;
+      width: 300px; /* Set a fixed size */
+      height: 300px;
+      border-radius: 50%; /* Make it circular */
+      object-fit: cover; /* Ensure the image covers the area without distortion */
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.6);
+      transition: all 0.4s ease;
     }
 
     .profile-img:hover {
-      transform: rotateY(10deg) rotateX(5deg) scale(1.03);
-      box-shadow: 0 0 70px rgba(0, 240, 255, 0.7);
+      transform: scale(1.05);
+      box-shadow: 0 0 70px rgba(0, 240, 255, 0.8), 0 0 25px var(--neon-pink);
     }
 
     .tech-stack {
@@ -492,6 +487,25 @@
       line-height: 1.8;
     }
 
+    .card ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .card ul li {
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .card ul li::before {
+        content: '»';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+    }
+
     .card-icon {
       font-size: 3rem;
       margin-bottom: 1.5rem;
@@ -520,13 +534,14 @@
       width: 100%;
       height: 100%;
       background: rgba(10, 10, 26, 0.9);
-      z-index: -1;
+      z-index: 0;
     }
 
     .timeline {
       position: relative;
       max-width: 1000px;
       margin: 4rem auto;
+      z-index: 1;
     }
 
     .timeline::before {
@@ -577,6 +592,7 @@
 
     .timeline-item:nth-child(odd) .timeline-content {
       margin-left: 50%;
+      padding-left: 40px;
     }
 
     .timeline-item:nth-child(odd) .timeline-content::before {
@@ -585,6 +601,7 @@
 
     .timeline-item:nth-child(even) .timeline-content {
       margin-right: 50%;
+      padding-right: 40px;
     }
 
     .timeline-item:nth-child(even) .timeline-content::before {
@@ -602,6 +619,8 @@
       background: rgba(0, 0, 0, 0.5);
       border-radius: 50px;
       border: 1px solid var(--primary);
+      width: 220px;
+      text-align: center;
     }
 
     .timeline-item:nth-child(odd) .timeline-date {
@@ -624,91 +643,31 @@
       margin-bottom: 1rem;
       font-family: 'JetBrains Mono', monospace;
     }
+    
+    .timeline-content ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
 
-    .timeline-content p {
-      line-height: 1.8;
+    .timeline-content ul li {
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: 0.7em;
+        line-height: 1.6;
+    }
+
+    .timeline-content ul li::before {
+        content: '»';
+        font-family: 'JetBrains Mono', monospace;
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
     }
 
     /* Projects Section - Interactive Showcase */
     #projects {
       position: relative;
-    }
-
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      height: 400px;
-      transition: all 0.5s ease;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.9) 100%);
-      z-index: 1;
-    }
-
-    .project-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .project-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 2rem;
-      z-index: 2;
-      transform: translateY(100px);
-      transition: all 0.5s ease;
-    }
-
-    .project-card:hover .project-content {
-      transform: translateY(0);
-    }
-
-    .project-card:hover .project-img {
-      transform: scale(1.1);
-    }
-
-    .project-content h3 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .project-content p {
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.5s ease 0.2s;
-    }
-
-    .project-card:hover .project-content p {
-      opacity: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-tag {
-      background: rgba(0, 240, 255, 0.2);
-      color: var(--primary);
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      border: 1px solid var(--primary);
     }
 
     /* Certifications Section - Professional Display */
@@ -790,7 +749,12 @@
       width: 100%;
       height: 100%;
       background: rgba(10, 10, 26, 0.9);
-      z-index: -1;
+      z-index: 0;
+    }
+    
+    #contact > * {
+        position: relative;
+        z-index: 1;
     }
 
     .social-links {
@@ -871,152 +835,82 @@
       letter-spacing: 2px;
     }
 
-    .footer-signature {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--primary);
-      margin: 2rem 0;
-      position: relative;
-      display: inline-block;
-    }
-
-    .footer-signature::before,
-    .footer-signature::after {
-      content: '#';
-      position: absolute;
-      color: var(--neon-pink);
-    }
-
-    .footer-signature::before {
-      left: -1.5rem;
-    }
-
-    .footer-signature::after {
-      right: -1.5rem;
-    }
-
     /* Animations */
     @keyframes textGlow {
-      0% {
-        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      }
-      50% {
-        text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5), 0 0 40px rgba(156, 39, 176, 0.3);
-      }
-      100% {
-        text-shadow: 0 0 15px rgba(0, 240, 255, 0.7), 0 0 25px rgba(255, 0, 255, 0.4);
-      }
+      0% { text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+      50% { text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5), 0 0 40px rgba(156, 39, 176, 0.3); }
+      100% { text-shadow: 0 0 15px rgba(0, 240, 255, 0.7), 0 0 25px rgba(255, 0, 255, 0.4); }
     }
 
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
 
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(156, 39, 176, 0.5);
-      }
-      100% {
-        box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
-      }
+      0% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+      50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(156, 39, 176, 0.5); }
+      100% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.6); }
     }
 
     /* Responsive Design */
     @media (max-width: 1200px) {
-      .about-content {
-        gap: 3rem;
-      }
-      
-      section {
-        padding: 6rem 1.5rem;
-      }
+      .about-content { gap: 3rem; }
+      section { padding: 6rem 1.5rem; }
     }
 
     @media (max-width: 992px) {
       .about-content {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Image on top on mobile */
       }
-      
-      .timeline::before {
-        left: 30px;
-      }
-      
+      .timeline::before { left: 30px; }
       .timeline-item:nth-child(odd) .timeline-content,
       .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 70px;
-        margin-right: 0;
+        margin: 0 0 0 70px;
+        padding-left: 2rem;
+        padding-right: 2rem;
       }
-      
       .timeline-item:nth-child(odd) .timeline-date,
       .timeline-item:nth-child(even) .timeline-date {
         left: 70px;
         right: auto;
-        top: -30px;
+        top: -35px;
+        transform: translateX(-50%);
+        width: auto;
       }
-      
       .timeline-item:nth-child(odd) .timeline-content::before,
       .timeline-item:nth-child(even) .timeline-content::before {
         left: -12px;
         right: auto;
       }
-
-      header h1 {
-        font-size: 4rem;
-      }
+      header h1 { font-size: 4rem; }
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 3rem;
-      }
-      
-      header p {
-        font-size: 1.2rem;
-      }
-      
+      header h1 { font-size: 3rem; }
+      header p { font-size: 1.2rem; }
       nav {
         flex-wrap: wrap;
         gap: 1rem;
         padding: 1rem;
       }
-      
-      section {
-        padding: 5rem 1.5rem;
-      }
-
+      section { padding: 5rem 1.5rem; }
       .header-buttons {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
       }
-
-      .btn {
-        width: 100%;
-      }
-
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
+      .btn { width: 100%; }
+      .cert-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 576px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      .header-subtext {
-        font-size: 1.1rem;
-      }
-
-      section h2 {
-        font-size: 2.2rem;
+      header h1 { font-size: 2.5rem; }
+      .header-subtext { font-size: 1.1rem; }
+      section h2 { font-size: 2.2rem; }
+      .profile-img {
+        width: 250px;
+        height: 250px;
       }
     }
   </style>
@@ -1047,11 +941,11 @@
     <div class="header-bg"></div>
     <div id="particles-js"></div>
     <h1>ANUDEEP GOUD</h1>
-    <p class="header-subtext">Cybersecurity Enthusiast | SOC Analyst Trainee | IT Support Explorer</p>
-    <p>Breaking into cybersecurity with 200+ labs, real exploits, and disciplined curiosity.</p>
+    <p class="header-subtext">Cybersecurity Analyst | IoT Security Specialist | IT Support Professional</p>
+    <p>Forging a path in cybersecurity with 200+ labs, real-world exploits, and disciplined curiosity.</p>
     <div class="header-buttons">
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
-      <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline">View My GitHub</a>
+      <a href="#contact" class="btn btn-primary">Engage</a>
+      <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline">Access GitHub</a>
     </div>
   </header>
 
@@ -1060,94 +954,98 @@
     <h2>About Me</h2>
     <div class="about-content">
       <div class="about-text">
-        <p>I'm Anudeep, a cybersecurity and IT support enthusiast with a disciplined, hands-on approach to learning.</p>
-        <p>I've completed 180+ real-world labs on TryHackMe and earned 20+ skill-based badges, ranking in the top 2% globally. My focus is blue team operations, log analysis, and system defense — supported by core scripting skills in Python, Bash, and PowerShell.</p>
-        <p>I hold industry certifications from CompTIA, IBM, Google Cybersecurity, and Google IT Support. I aim to break into the industry through SOC roles or IT support, with a long-term focus on red teaming and cybersecurity automation.</p>
+        <p>I'm Anudeep, a cybersecurity and IT support professional with a disciplined, hands-on approach to securing complex systems.</p>
+        <p>My practical experience is demonstrated through 200+ real-world labs on TryHackMe, where I rank in the top 2% globally. My focus is on blue team operations, threat detection, and system defense — backed by a strong foundation in Python, Bash, and PowerShell scripting for automation and analysis.</p>
+        <p>I hold key industry certifications from CompTIA, IBM, and Google, validating my expertise. I am actively seeking to apply my skills in a challenging SOC or advanced IT support role, with a long-term trajectory towards red teaming and cybersecurity automation.</p>
         
         <div class="tech-stack">
-          <div class="tech-item"><i class="fab fa-linux"></i> Linux Security</div>
-          <div class="tech-item"><i class="fas fa-shield-alt"></i> SIEM</div>
-          <div class="tech-item"><i class="fas fa-network-wired"></i> Network Security</div>
-          <div class="tech-item"><i class="fas fa-lock"></i> Cryptography</div>
-          <div class="tech-item"><i class="fas fa-bug"></i> Pen Testing</div>
-          <div class="tech-item"><i class="fas fa-code"></i> Python</div>
+          <div class="tech-item"><i class="fas fa-shield-alt"></i> SIEM & Log Analysis</div>
+          <div class="tech-item"><i class="fab fa-linux"></i> Linux/Windows Security</div>
+          <div class="tech-item"><i class="fas fa-network-wired"></i> Network Defense</div>
+          <div class="tech-item"><i class="fas fa-bug"></i> Vulnerability Assessment</div>
+          <div class="tech-item"><i class="fas fa-microchip"></i> IoT Security</div>
+          <div class="tech-item"><i class="fas fa-code"></i> Python & Scripting</div>
         </div>
       </div>
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=500&q=80" alt="Anudeep Goud" class="profile-img">
+        <img src="photo.jpg" alt="Anudeep Goud" class="profile-img">
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2>My Skills</h2>
+    <h2>Core Competencies</h2>
     <div class="grid">
       <div class="card">
         <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Defensive Security</h3>
-        <p>SIEM: Splunk (level 2), ELK Stack<br>
-           MITRE ATT&CK (lab mapping)<br>
-           IDS: Snort (home lab)<br>
-           Network Monitoring (Wireshark, tcpdump)<br>
-           NIST IR Concepts</p>
+        <h3>Defensive Security (Blue Team)</h3>
+        <ul>
+           <li><b>SIEM:</b> Splunk (Advanced), ELK Stack</li>
+           <li><b>Frameworks:</b> MITRE ATT&CK, NIST IR</li>
+           <li><b>IDS/IPS:</b> Snort (Rule Writing)</li>
+           <li><b>Analysis:</b> Wireshark, TCPdump</li>
+        </ul>
       </div>
       <div class="card">
         <div class="card-icon"><i class="fas fa-bug"></i></div>
-        <h3>Offensive Security</h3>
-        <p>SQLMap (lab use)<br>
-           John the Ripper (password cracking)<br>
-           Nmap (host scanning)<br>
-           Gobuster (dir discovery)<br>
-           Metasploit </p>
+        <h3>Offensive Security (Red Team)</h3>
+        <ul>
+           <li><b>Exploitation:</b> Metasploit, SQLMap</li>
+           <li><b>Password Cracking:</b> John the Ripper, Hashcat</li>
+           <li><b>Scanning:</b> Nmap, Gobuster</li>
+           <li><b>Web App:</b> Burp Suite, OWASP Top 10</li>
+        </ul>
       </div>
       <div class="card">
         <div class="card-icon"><i class="fas fa-code"></i></div>
         <h3>Development & Automation</h3>
-        <p>Python (port scanner, payload scripts)<br>
-           Bash (log automation)<br>
-           PowerShell (user management)<br>
-           Git (version control)</p>
+        <ul>
+           <li><b>Python:</b> Network Scanners, Automation Scripts</li>
+           <li><b>Shell Scripting:</b> Bash, PowerShell</li>
+           <li><b>Version Control:</b> Git & GitHub</li>
+           <li><b>Infrastructure:</b> Docker, VirtualBox</li>
+        </ul>
       </div>
       <div class="card">
         <div class="card-icon"><i class="fas fa-tools"></i></div>
-        <h3>IT Support Tools</h3>
-        <p>Windows OS troubleshooting<br>
-           Google IT Support Labs<br>
-           VirtualBox labs<br>
-           Active Directory <br>
-           Ticketing concepts</p>
+        <h3>IT & Systems Administration</h3>
+        <ul>
+            <li><b>OS:</b> Windows Server, Linux (Debian/RHEL)</li>
+            <li><b>Directory Services:</b> Active Directory</li>
+            <li><b>Cloud:</b> AWS (EC2, S3), GCP Basics</li>
+            <li><b>Troubleshooting:</b> Hardware, Software, Networking</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience">
-    <h2>Experience</h2>
+    <h2>Experience & Deployments</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-date">2023 - Present</div>
+        <div class="timeline-date">Jul 2024 - Oct 2024</div>
         <div class="timeline-content">
-          <h3>Cybersecurity Student</h3>
-          <h4>Self-Study & Labs</h4>
-          <p>Completed 180+ hands-on cybersecurity labs covering network security, penetration testing, and defensive operations. Ranked in top 2% on TryHackMe platform.</p>
-          <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-            <li>200+ hours of practical security training</li>
-            <li>20+ skill badges earned</li>
-            <li>Home lab with SIEM and IDS configurations</li>
+          <h3>IoT Security Intern</h3>
+          <h4>Career-DC (Australia, On-site)</h4>
+          <ul>
+            <li>Engineered and deployed an IoT sensor network for a smart pool monitoring project, utilizing ESP32 devices and a secure cloud dashboard.</li>
+            <li>Achieved a >27% improvement in sensor data accuracy and reduced data transmission latency to <2 seconds through rigorous testing of 15+ wireless configurations.</li>
+            <li>Co-authored a 10-page technical report detailing system architecture, security protocols, and performance metrics for pilot deployment.</li>
+            <li>Gained hands-on expertise in IoT security hardening, MQTT protocol implementation, and embedded device troubleshooting.</li>
           </ul>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2021 - 2023</div>
+        <div class="timeline-date">2023 - Present</div>
         <div class="timeline-content">
-          <h3>IT Support </h3>
-          <h4>Google IT Support Certification</h4>
-          <p>Completed comprehensive IT support training including system administration, networking, and security fundamentals.</p>
-          <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-            <li>Virtual machine troubleshooting</li>
-            <li>Network configuration and debugging</li>
-            <li>Customer support ticketing systems</li>
+          <h3>Security Operations Lab Analyst</h3>
+          <h4>Self-Directed & Lab-Based Training</h4>
+          <ul>
+            <li>Executed 200+ hands-on cybersecurity labs (TryHackMe Top 2%) covering network security, penetration testing, and defensive operations.</li>
+            <li>Designed and managed a home lab environment with SIEM (Splunk), IDS (Snort), and multiple target VMs for practical security analysis.</li>
+            <li>Authored detailed write-ups and documentation for complex lab exploits and defensive configurations on GitHub.</li>
           </ul>
         </div>
       </div>
@@ -1184,7 +1082,7 @@
     <h2>Certifications</h2>
     <div class="cert-grid">
       <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=500&q=80" alt="CompTIA Security+" class="cert-img">
+        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=500&q=80" alt="CompTIA Security+" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=CompTIA';">
         <div class="cert-content">
           <h3>CompTIA Security+</h3>
           <div class="cert-date">May 2023 - May 2026</div>
@@ -1192,7 +1090,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="IBM Cybersecurity Analyst" class="cert-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="IBM Cybersecurity Analyst" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=IBM';">
         <div class="cert-content">
           <h3>IBM Cybersecurity Analyst</h3>
           <div class="cert-date">2022 - No Expiration</div>
@@ -1200,7 +1098,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500&q=80" alt="Google Cybersecurity" class="cert-img">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500&q=80" alt="Google Cybersecurity" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=Google';">
         <div class="cert-content">
           <h3>Google Cybersecurity Certificate</h3>
           <div class="cert-date">2022 - No Expiration</div>
@@ -1208,10 +1106,10 @@
         </div>
       </div>
       <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="TryHackMe" class="cert-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="TryHackMe" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=TryHackMe';">
         <div class="cert-content">
           <h3>TryHackMe Achievements</h3>
-          <div class="cert-date">Top 2% globally | 180+ Labs | 20+ Badges</div>
+          <div class="cert-date">Top 2% globally | 200+ Labs</div>
           <p>Completed extensive hands-on cybersecurity training through practical labs.</p>
         </div>
       </div>
@@ -1245,12 +1143,11 @@
     canvas.height = window.innerHeight;
     
     const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const nums = '0123456789';
-    const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
     const hex = '0123456789ABCDEF';
     
-    const alphabet = katakana + latin + nums + symbols + hex;
+    const alphabet = katakana + latin + nums + hex;
     
     const fontSize = 18;
     const columns = canvas.width / fontSize;
@@ -1258,95 +1155,64 @@
     const rainDrops = [];
     
     for (let x = 0; x < columns; x++) {
-      rainDrops[x] = {
-        y: Math.random() * -100,
-        speed: Math.random() * 3 + 1,
-        char: alphabet.charAt(Math.floor(Math.random() * alphabet.length))
-      };
+      rainDrops[x] = Math.random() * canvas.height;
     }
     
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(10, 10, 26, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      ctx.fillStyle = '#0f0';
+      ctx.fillStyle = '#00ff88';
       ctx.font = fontSize + 'px monospace';
       
       for (let i = 0; i < rainDrops.length; i++) {
         const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        ctx.fillText(rainDrops[i].char, i * fontSize, rainDrops[i].y * fontSize);
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
         
-        if (rainDrops[i].y * fontSize > canvas.height && Math.random() > 0.975) {
-          rainDrops[i].y = 0;
-          rainDrops[i].speed = Math.random() * 3 + 1;
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
         }
-        
-        rainDrops[i].y += rainDrops[i].speed;
-        
-        // Occasionally change the character
-        if (Math.random() > 0.99) {
-          rainDrops[i].char = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        }
+        rainDrops[i]++;
       }
     };
     
-    setInterval(draw, 30);
+    setInterval(draw, 33);
     
-    // Terminal Text Effect - Enhanced
+    // Terminal Text Effect
     const terminalText = document.getElementById('terminal-text');
     const phrases = [
       'whoami',
       'ls -la ~/projects',
-      'cd /cybersecurity',
       'nmap -sV -T4 target.com',
       'python exploit.py --target 192.168.1.1',
       'echo "Security is a process, not a product."',
-      'sudo apt-get update && sudo apt-get upgrade -y',
-      'tail -f /var/log/auth.log | grep "Failed password"',
-      'hydra -l admin -P rockyou.txt ssh://target.com -t 4',
-      'msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp; set LHOST 192.168.1.100; set LPORT 4444; exploit"',
-      'python3 -c "import socket; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect((\\"target.com\\",80)); s.send(b\\"GET / HTTP/1.1\\r\\nHost: target.com\\r\\n\\r\\n\\"); print(s.recv(1024).decode())"',
-      'tcpdump -i eth0 -n -s0 -w capture.pcap',
-      'john --wordlist=rockyou.txt --format=raw-md5 hashes.txt',
-      'sqlmap -u "http://target.com/page.php?id=1" --risk=3 --level=5',
-      'wireshark -k -i eth0',
-      'aircrack-ng -w rockyou.txt capture.cap',
-      'gobuster dir -u http://target.com -w /usr/share/wordlists/dirb/common.txt',
-      'nikto -h target.com',
-      'setoolkit',
-      'theHarvester -d target.com -b google'
+      'tail -f /var/log/auth.log | grep "Failed"',
+      'msfconsole -q -x "use exploit/multi/handler;"',
+      'sqlmap -u "http://target.com/page.php?id=1"',
     ];
     
     let currentPhrase = 0;
     let currentChar = 0;
     let isDeleting = false;
     let isWaiting = false;
-    let terminalSpeed = 100;
     
-    const type = () => {
+    function type() {
       if (isWaiting) return;
-      
       const currentText = phrases[currentPhrase];
       
       if (!isDeleting && currentChar < currentText.length) {
         terminalText.textContent = currentText.substring(0, currentChar + 1);
         currentChar++;
-        
-        // Random speed variation for more natural typing
-        terminalSpeed = Math.random() * 100 + 50;
-        
-        setTimeout(type, terminalSpeed);
+        setTimeout(type, 100);
       } else if (isDeleting && currentChar > 0) {
         terminalText.textContent = currentText.substring(0, currentChar - 1);
         currentChar--;
-        setTimeout(type, 30);
+        setTimeout(type, 50);
       } else {
         isDeleting = !isDeleting;
-        
         if (!isDeleting) {
           currentPhrase = (currentPhrase + 1) % phrases.length;
         }
-        
         isWaiting = true;
         setTimeout(() => {
           isWaiting = false;
@@ -1359,125 +1225,19 @@
     
     // Particles.js Configuration
     particlesJS('particles-js', {
-      "particles": {
-        "number": {
-          "value": 80,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#00f0ff"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-            "nb_sides": 5
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 2,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00a8ff",
-          "opacity": 0.3,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": true,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 0.8
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
+      "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#00f0ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#00a8ff", "opacity": 0.3, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } }, "push": { "particles_nb": 4 } } }, "retina_detect": true
     });
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
 
     // Add animation to sections when they come into view
     const sections = document.querySelectorAll('section');
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1485,9 +1245,7 @@
           entry.target.style.transform = 'translateY(0)';
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
     
     sections.forEach(section => {
       section.style.opacity = 0;
