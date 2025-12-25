@@ -2,1260 +2,967 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anudeep Goud |  Cybersecurity Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B1020" />
+  <meta name="description" content="Anu Goud — IT Support / Service Desk (Sydney). ATS-friendly, recruiter-first portfolio with proof, tools, and support-focused projects." />
+  <title>Anu Goud | IT Support / Service Desk (Sydney)</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    :root {
-      --primary: #00f0ff;
-      --primary-dark: #0066ff;
-      --primary-darker: #003d7a;
-      --bg: #0a0a1a;
-      --bg-light: #111822;
-      --bg-lighter: #1a2433;
-      --text: #e0f7fa;
-      --text-light: #ffffff;
-      --accent: #ff4d4d;
-      --success: #00ff88;
-      --warning: #ffcc00;
-      --cyber-blue: #00a8ff;
-      --cyber-purple: #9c27b0;
-      --neon-pink: #ff00ff;
-      --neon-green: #00ff00;
-      --hacker-orange: #ff6600;
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1020;
+      --bg2:#0E1630;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.12);
+      --stroke2:rgba(255,255,255,.18);
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --muted2:rgba(234,240,255,.58);
+      --brand:#7C5CFF;
+      --brand2:#33D7FF;
+      --ok:#37F59B;
+      --warn:#FFCC66;
+      --danger:#FF5C7A;
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --shadow2: 0 14px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1140px;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 10% 10%, rgba(124,92,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 30%, rgba(51,215,255,.14), transparent 55%),
+        radial-gradient(800px 520px at 45% 100%, rgba(55,245,155,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 45%, var(--bg2) 100%);
+      overflow-x:hidden;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
+    /* Subtle premium noise */
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      opacity:.08;
+      mix-blend-mode:overlay;
+      z-index:-1;
+    }
+
+    a{ color:inherit; }
+    .container{ max-width:var(--max); margin:0 auto; padding: 0 18px; }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,10,18,.80), rgba(7,10,18,.45));
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      height:68px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 55%),
+        linear-gradient(135deg, rgba(124,92,255,1), rgba(51,215,255,1));
+      box-shadow: 0 12px 30px rgba(124,92,255,.22);
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .brand-title{
+      line-height:1.05;
+    }
+    .brand-title b{ display:block; font-size:14px; letter-spacing:.4px; }
+    .brand-title span{ display:block; font-size:12px; color:var(--muted); }
+
+    .nav{
+      display:flex; gap:14px; align-items:center;
+    }
+    .nav a{
+      text-decoration:none;
+      font-size:12.5px;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+      white-space:nowrap;
+    }
+    .nav a:hover{
+      color:var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      transform: translateY(-1px);
+    }
+    .nav .cta{
+      color: var(--bg0);
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(51,215,255,1));
+      border-color: rgba(255,255,255,.16);
+      box-shadow: 0 10px 26px rgba(51,215,255,.14);
+      font-weight:700;
+    }
+    .nav .cta:hover{
+      transform: translateY(-1px) scale(1.01);
+      background: linear-gradient(135deg, rgba(124,92,255,.96), rgba(51,215,255,.96));
+    }
+
+    /* Hero */
+    .hero{
+      padding: 56px 0 18px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .panel:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 200px at 12% 0%, rgba(124,92,255,.25), transparent 60%),
+                  radial-gradient(520px 240px at 92% 10%, rgba(51,215,255,.20), transparent 60%);
+      pointer-events:none;
+      opacity:.85;
+    }
+    .panel-inner{
+      position:relative;
+      padding: 28px 28px 22px;
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:var(--mono);
+      font-size:12px;
+      color: rgba(234,240,255,.78);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+    }
+    .kicker i{ color: var(--ok); }
+
+    h1{
+      margin:14px 0 10px;
+      font-size: 48px;
+      line-height:1.05;
+      letter-spacing:-1px;
+    }
+    .headline{
+      margin:0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+      max-width: 62ch;
+    }
+
+    .pill-row{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px;
+      padding:9px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.86);
+    }
+    .pill i{ color: rgba(234,240,255,.75); }
+
+    .hero-actions{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:12px;
+      align-items:center;
+    }
+    .btn{
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
       color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 20% 30%, rgba(0, 168, 255, 0.05) 0%, transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(156, 39, 176, 0.05) 0%, transparent 25%);
+      font-weight:700;
+      font-size:13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.085);
+      border-color: rgba(255,255,255,.20);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(51,215,255,1));
+      color: var(--bg0);
+      border-color: rgba(255,255,255,.16);
+      box-shadow: 0 12px 30px rgba(124,92,255,.18);
+    }
+    .btn.primary:hover{ transform: translateY(-1px) scale(1.01); }
+
+    /* Right hero card */
+    .profile{
+      display:flex; flex-direction:column;
+      min-height: 100%;
+    }
+    .profile-top{
+      padding: 24px 24px 10px;
+      position:relative;
+    }
+    .avatar-wrap{
+      display:flex; align-items:center; gap:14px;
+    }
+    .avatar{
+      width:62px; height:62px; border-radius:18px;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: 0 14px 28px rgba(0,0,0,.35);
+      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      flex: 0 0 auto;
+    }
+    .avatar img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    .who{
+      display:flex; flex-direction:column;
+      gap:3px;
+    }
+    .who b{ font-size:14px; letter-spacing:.2px; }
+    .who span{ font-size:12px; color: var(--muted); }
+    .chipline{
+      margin-top: 12px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .chip{
+      font-size:11.5px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color: rgba(234,240,255,.82);
+      font-family: var(--mono);
     }
 
-    /* Cyber Terminal Effect - Enhanced */
-    .cyber-terminal {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--primary);
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      z-index: 1000;
-      font-family: 'JetBrains Mono', monospace;
-      overflow: hidden;
-      box-shadow: 0 -5px 30px rgba(0, 240, 255, 0.2);
+    .profile-mid{
+      padding: 14px 24px 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
     }
-
-    .terminal-prompt {
-      color: var(--success);
-      margin-right: 10px;
-      text-shadow: 0 0 5px var(--success);
-    }
-
-    .terminal-cursor {
-      display: inline-block;
-      width: 10px;
-      height: 18px;
-      background: var(--primary);
-      animation: blink 1s infinite, pulse 2s infinite;
-      vertical-align: middle;
-      box-shadow: 0 0 10px var(--primary);
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    /* Enhanced Matrix Rain Background */
-    .matrix-rain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.15;
-    }
-
-    /* Navigation - Hacker Style */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0) 100%);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1.5rem;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 240, 255, 0.3);
-      box-shadow: 0 5px 30px rgba(0, 240, 255, 0.1);
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-      position: relative;
-      padding: 0.5rem 0;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-      box-shadow: 0 0 10px var(--primary);
-    }
-
-    nav a:hover {
-      color: var(--primary);
-      text-shadow: 0 0 10px var(--primary);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Header with Advanced Particle Effect */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      color: white;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .header-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(ellipse at center, rgba(10,10,26,0.9) 0%, rgba(10,10,26,1) 100%), 
-                  url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      z-index: -2;
-    }
-
-    .particles-js {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    header h1 {
-      font-size: 5rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, var(--primary), var(--cyber-blue), var(--primary-dark), var(--cyber-purple));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: textGlow 3s ease-in-out infinite alternate, float 6s ease-in-out infinite;
-      position: relative;
-    }
-
-    header h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      filter: blur(1px);
-    }
-
-    .header-subtext {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--success);
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-      position: relative;
-      display: inline-block;
-    }
-
-    .header-subtext::before {
-      content: '>';
-      position: absolute;
-      left: -1.5rem;
-      color: var(--success);
-      animation: blink 1s infinite;
-    }
-
-    .header-buttons {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .btn {
-      padding: 1rem 2.2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, var(--primary), var(--cyber-purple), var(--neon-pink));
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--bg);
-    }
-
-    .btn-primary:hover {
-      background: transparent;
-      color: var(--primary);
-      border-color: var(--primary);
-      box-shadow: 0 0 25px var(--primary);
-    }
-
-    .btn-primary:hover::before {
-      opacity: 0.2;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--bg);
-      box-shadow: 0 0 25px var(--primary);
-    }
-
-    /* Main Sections - Cyber Enhanced */
-    section {
-      padding: 8rem 1.5rem;
-      max-width: 1400px;
-      margin: auto;
-      position: relative;
-    }
-
-    section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    section:hover::before {
-      opacity: 1;
-    }
-
-    section h2 {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 3rem;
-      position: relative;
-      padding-left: 2rem;
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-    }
-
-    section h2::before {
-      content: '>';
-      position: absolute;
-      left: 0;
-      color: var(--success);
-      font-family: 'JetBrains Mono', monospace;
-      animation: blink 1s infinite;
-    }
-
-    /* About Section - Professional Upgrade */
-    #about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .about-content {
-      display: flex;
-      gap: 4rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
-    .about-text {
-      flex: 2; /* Give text more space */
-      position: relative;
-    }
-
-    .about-text::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 100px;
-      height: 100px;
-      border-left: 3px solid var(--primary);
-      border-top: 3px solid var(--primary);
-      opacity: 0.5;
-    }
-
-    .about-text::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 100px;
-      height: 100px;
-      border-right: 3px solid var(--primary);
-      border-bottom: 3px solid var(--primary);
-      opacity: 0.5;
-    }
-
-    .about-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .profile-img {
-      width: 300px; /* Set a fixed size */
-      height: 300px;
-      border-radius: 50%; /* Make it circular */
-      object-fit: cover; /* Ensure the image covers the area without distortion */
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 50px rgba(0, 240, 255, 0.6);
-      transition: all 0.4s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 70px rgba(0, 240, 255, 0.8), 0 0 25px var(--neon-pink);
-    }
-
-    .tech-stack {
-      margin-top: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .tech-item {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.7rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(0, 240, 255, 0.5);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .tech-item:hover {
-      background: rgba(0, 240, 255, 0.1);
-      border-color: var(--primary);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-      transform: translateY(-3px);
-    }
-
-    /* Skills Section - Interactive */
-    #skills {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-    }
-
-    .grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-
-    /* Enhanced Cards with Holographic Effect */
-    .card {
-      background: linear-gradient(145deg, rgba(17, 24, 34, 0.8), rgba(26, 36, 51, 0.8));
-      padding: 2.5rem;
-      border-radius: 15px;
-      transition: all 0.5s ease;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(0, 240, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, var(--primary), var(--cyber-purple), var(--neon-pink));
-      z-index: -1;
+    .metric{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
       border-radius: 16px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
+      padding: 12px 12px;
+      box-shadow: var(--shadow2);
+    }
+    .metric .k{
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(234,240,255,.62);
+    }
+    .metric .v{
+      margin-top:6px;
+      font-size: 14px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .metric .v i{ margin-right:8px; color: var(--ok); }
+
+    .profile-bottom{
+      margin-top:auto;
+      padding: 0 24px 24px;
+    }
+    .contact-list{
+      display:flex; flex-direction:column; gap:10px;
+      margin-top: 8px;
+    }
+    .contact-item{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+      color: rgba(234,240,255,.86);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      font-size: 12.5px;
+    }
+    .contact-item:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+    }
+    .contact-item i{ width:18px; color: rgba(234,240,255,.74); }
+
+    /* Sections */
+    section{
+      padding: 18px 0;
+    }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px;
+      margin: 22px 0 12px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .section-title p{
+      margin:0;
+      color: var(--muted);
+      font-size: 12.5px;
+      max-width: 66ch;
     }
 
-    .card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 20px 40px rgba(0, 240, 255, 0.3);
-      border-color: var(--primary);
+    .grid{
+      display:grid;
+      gap:14px;
+    }
+    .grid.two{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      padding: 16px 16px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(420px 120px at 18% 0%, rgba(124,92,255,.18), transparent 60%),
+                  radial-gradient(420px 120px at 85% 20%, rgba(51,215,255,.12), transparent 60%);
+      opacity:.55;
+      pointer-events:none;
+    }
+    .card > *{ position:relative; }
+
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height:1.65;
+    }
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .list li{
+      display:flex; gap:10px;
+      font-size: 12.5px;
+      color: rgba(234,240,255,.84);
+      line-height: 1.55;
+    }
+    .list li i{
+      margin-top: 2px;
+      width: 16px;
+      color: rgba(234,240,255,.60);
     }
 
-    .card:hover::before {
-      opacity: 0.8;
+    .tags{
+      margin-top: 10px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .tag{
+      font-size: 11.5px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color: rgba(234,240,255,.80);
+      font-family: var(--mono);
     }
 
-    .card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      position: relative;
-      display: inline-block;
+    /* Projects */
+    .project{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .project .top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .project .badge{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.78);
+      white-space:nowrap;
+    }
+    .project .links{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .mini{
+      display:inline-flex; align-items:center; gap:8px;
+      text-decoration:none;
+      font-size:12px;
+      color: rgba(234,240,255,.84);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .mini:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+    }
+    .mini i{ color: rgba(234,240,255,.65); }
+
+    /* Footer */
+    footer{
+      margin-top: 30px;
+      padding: 30px 0 60px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .footer-grid{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+      flex-wrap:wrap;
+    }
+    .footer-grid b{ color: rgba(234,240,255,.86); }
+
+    /* Terminal strip (subtle, optional) */
+    .terminal{
+      margin-top: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.28);
+      padding: 12px 14px;
+      display:flex; gap:10px; align-items:center;
+      overflow:hidden;
+      font-family: var(--mono);
+      color: rgba(234,240,255,.80);
+      box-shadow: var(--shadow2);
+    }
+    .terminal .prompt{ color: var(--ok); }
+    .terminal .cursor{
+      width:10px; height:16px; background: rgba(51,215,255,.85);
+      border-radius: 4px;
+      animation: blink 1s infinite;
+      box-shadow: 0 0 16px rgba(51,215,255,.30);
+    }
+    @keyframes blink{ 0%,100%{ opacity:1;} 50%{ opacity:.15;} }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 40px; }
+      .grid.three{ grid-template-columns: 1fr; }
+      .grid.two{ grid-template-columns: 1fr; }
+      .nav{ display:none; } /* clean mobile */
+    }
+    @media (max-width: 520px){
+      h1{ font-size: 34px; }
+      .panel-inner{ padding: 22px 18px 18px; }
     }
 
-    .card h3::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background: var(--primary);
-    }
-
-    .card p {
-      margin-bottom: 2rem;
-      line-height: 1.8;
-    }
-
-    .card ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-    .card ul li {
-        position: relative;
-        padding-left: 1.5em;
-        margin-bottom: 0.5em;
-    }
-
-    .card ul li::before {
-        content: '»';
-        position: absolute;
-        left: 0;
-        color: var(--primary);
-        font-weight: bold;
-    }
-
-    .card-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      transition: all 0.5s ease;
-    }
-
-    .card:hover .card-icon {
-      transform: scale(1.2);
-      color: var(--neon-pink);
-    }
-
-    /* Experience Timeline - Futuristic */
-    #experience {
-      background: url('https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-      background-attachment: fixed;
-      position: relative;
-    }
-
-    #experience::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 10, 26, 0.9);
-      z-index: 0;
-    }
-
-    .timeline {
-      position: relative;
-      max-width: 1000px;
-      margin: 4rem auto;
-      z-index: 1;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--primary), var(--cyber-purple), transparent);
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 4rem;
-      perspective: 1000px;
-    }
-
-    .timeline-content {
-      background: rgba(17, 24, 34, 0.9);
-      padding: 2rem;
-      border-radius: 15px;
-      position: relative;
-      border: 1px solid rgba(0, 240, 255, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: all 0.5s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .timeline-content:hover {
-      transform: translateY(-10px) rotateX(5deg);
-      box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4);
-      border-color: var(--primary);
-    }
-
-    .timeline-content::before {
-      content: '';
-      position: absolute;
-      top: 25px;
-      width: 25px;
-      height: 25px;
-      background: var(--primary);
-      transform: rotate(45deg);
-      box-shadow: 0 0 10px var(--primary);
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content {
-      margin-left: 50%;
-      padding-left: 40px;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content::before {
-      left: -12px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content {
-      margin-right: 50%;
-      padding-right: 40px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content::before {
-      right: -12px;
-    }
-
-    .timeline-date {
-      position: absolute;
-      top: 15px;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      padding: 0.5rem 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 50px;
-      border: 1px solid var(--primary);
-      width: 220px;
-      text-align: center;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-date {
-      right: calc(50% + 40px);
-    }
-
-    .timeline-item:nth-child(even) .timeline-date {
-      left: calc(50% + 40px);
-    }
-
-    .timeline-content h3 {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-content h4 {
-      font-size: 1.1rem;
-      color: var(--success);
-      margin-bottom: 1rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    
-    .timeline-content ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-    .timeline-content ul li {
-        position: relative;
-        padding-left: 1.5em;
-        margin-bottom: 0.7em;
-        line-height: 1.6;
-    }
-
-    .timeline-content ul li::before {
-        content: '»';
-        font-family: 'JetBrains Mono', monospace;
-        position: absolute;
-        left: 0;
-        color: var(--primary);
-        font-weight: bold;
-    }
-
-    /* Projects Section - Interactive Showcase */
-    #projects {
-      position: relative;
-    }
-
-    /* Certifications Section - Professional Display */
-    #certifications {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .cert-card {
-      background: rgba(17, 24, 34, 0.8);
-      border-radius: 15px;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      border: 1px solid rgba(0, 240, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-    }
-
-    .cert-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 240, 255, 0.3);
-      border-color: var(--primary);
-    }
-
-    .cert-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid rgba(0, 240, 255, 0.3);
-      transition: all 0.5s ease;
-    }
-
-    .cert-card:hover .cert-img {
-      transform: scale(1.05);
-    }
-
-    .cert-content {
-      padding: 2rem;
-    }
-
-    .cert-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    .cert-date {
-      color: var(--primary);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .cert-date::before {
-      content: '\f073';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-    }
-
-    /* Contact Section - Interactive Form */
-    #contact {
-      background: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-      background-attachment: fixed;
-      position: relative;
-    }
-
-    #contact::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 10, 26, 0.9);
-      z-index: 0;
-    }
-    
-    #contact > * {
-        position: relative;
-        z-index: 1;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(17, 24, 34, 0.8);
-      color: var(--primary);
-      font-size: 1.8rem;
-      transition: all 0.5s ease;
-      border: 1px solid rgba(0, 240, 255, 0.3);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, var(--primary), var(--cyber-purple), var(--neon-pink));
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .social-link:hover {
-      background: transparent;
-      color: white;
-      transform: translateY(-10px) scale(1.1);
-      box-shadow: 0 10px 30px rgba(0, 240, 255, 0.5);
-    }
-
-    .social-link:hover::before {
-      opacity: 0.8;
-    }
-
-    /* Footer - Cyber Signature */
-    footer {
-      text-align: center;
-      padding: 5rem 2rem;
-      font-size: 1rem;
-      color: #aaa;
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 100%);
-      position: relative;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--primary), transparent);
-      box-shadow: 0 0 20px var(--primary);
-    }
-
-    .footer-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-      letter-spacing: 2px;
-    }
-
-    /* Animations */
-    @keyframes textGlow {
-      0% { text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
-      50% { text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.5), 0 0 40px rgba(156, 39, 176, 0.3); }
-      100% { text-shadow: 0 0 15px rgba(0, 240, 255, 0.7), 0 0 25px rgba(255, 0, 255, 0.4); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
-      50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(156, 39, 176, 0.5); }
-      100% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.6); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1200px) {
-      .about-content { gap: 3rem; }
-      section { padding: 6rem 1.5rem; }
-    }
-
-    @media (max-width: 992px) {
-      .about-content {
-        flex-direction: column-reverse; /* Image on top on mobile */
-      }
-      .timeline::before { left: 30px; }
-      .timeline-item:nth-child(odd) .timeline-content,
-      .timeline-item:nth-child(even) .timeline-content {
-        margin: 0 0 0 70px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      .timeline-item:nth-child(odd) .timeline-date,
-      .timeline-item:nth-child(even) .timeline-date {
-        left: 70px;
-        right: auto;
-        top: -35px;
-        transform: translateX(-50%);
-        width: auto;
-      }
-      .timeline-item:nth-child(odd) .timeline-content::before,
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -12px;
-        right: auto;
-      }
-      header h1 { font-size: 4rem; }
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 3rem; }
-      header p { font-size: 1.2rem; }
-      nav {
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 1rem;
-      }
-      section { padding: 5rem 1.5rem; }
-      .header-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-      }
-      .btn { width: 100%; }
-      .cert-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 576px) {
-      header h1 { font-size: 2.5rem; }
-      .header-subtext { font-size: 1.1rem; }
-      section h2 { font-size: 2.2rem; }
-      .profile-img {
-        width: 250px;
-        height: 250px;
-      }
+    /* Print (clean) */
+    @media print{
+      .topbar, .terminal, .nav, .hero-actions{ display:none !important; }
+      body{ background:#fff; color:#111; }
+      .panel, .card{ box-shadow:none; background:#fff; border:1px solid #ddd; }
+      a{ text-decoration:none; }
     }
   </style>
-</head>
-<body>
-  <!-- Matrix Rain Background -->
-  <canvas id="matrix" class="matrix-rain"></canvas>
 
-  <!-- Cyber Terminal -->
-  <div class="cyber-terminal">
-    <span class="terminal-prompt">root@anulabs:~$</span>
-    <span id="terminal-text"></span>
-    <span class="terminal-cursor"></span>
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anu Goud",
+    "jobTitle": "IT Support / Service Desk",
+    "address": { "@type": "PostalAddress", "addressLocality": "Sydney", "addressCountry": "AU" },
+    "email": "anudeepgoude@gmail.com",
+    "url": "https://anulabs.co",
+    "sameAs": [
+      "https://www.linkedin.com/in/anudeep-goud-8592b4230",
+      "https://github.com/Anu-osi"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-title">
+            <b>Anu Goud</b>
+            <span>IT Support / Service Desk (Sydney)</span>
+          </div>
+        </a>
+        <div class="nav" aria-label="Primary navigation">
+          <a href="#value">Value</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#certs">Certs</a>
+          <a href="#contact" class="cta">Contact</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#about"><i class="fas fa-user"></i> About</a>
-    <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-    <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-    <a href="#certifications"><i class="fas fa-certificate"></i> Certs</a>
-    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-  </nav>
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container">
+      <div class="hero-grid">
 
-  <!-- Header with Particle Effect -->
-  <header>
-    <div class="header-bg"></div>
-    <div id="particles-js"></div>
-    <h1>ANUDEEP GOUD</h1>
-    <p class="header-subtext">Cybersecurity Analyst | IoT Security Specialist | IT Support Professional</p>
-    <p>Forging a path in cybersecurity with 200+ labs, real-world exploits, and disciplined curiosity.</p>
-    <div class="header-buttons">
-      <a href="#contact" class="btn btn-primary">Engage</a>
-      <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline">Access GitHub</a>
-    </div>
-  </header>
+        <!-- Left -->
+        <div class="panel">
+          <div class="panel-inner">
+            <div class="kicker">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Recruiter-first portfolio | Support-focused proof | Sydney-ready</span>
+            </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>I'm Anudeep, a cybersecurity and IT support professional with a disciplined, hands-on approach to securing complex systems.</p>
-        <p>My practical experience is demonstrated through 200+ real-world labs on TryHackMe, where I rank in the top 2% globally. My focus is on blue team operations, threat detection, and system defense — backed by a strong foundation in Python, Bash, and PowerShell scripting for automation and analysis.</p>
-        <p>I hold key industry certifications from CompTIA, IBM, and Google, validating my expertise. I am actively seeking to apply my skills in a challenging SOC or advanced IT support role, with a long-term trajectory towards red teaming and cybersecurity automation.</p>
-        
-        <div class="tech-stack">
-          <div class="tech-item"><i class="fas fa-shield-alt"></i> SIEM & Log Analysis</div>
-          <div class="tech-item"><i class="fab fa-linux"></i> Linux/Windows Security</div>
-          <div class="tech-item"><i class="fas fa-network-wired"></i> Network Defense</div>
-          <div class="tech-item"><i class="fas fa-bug"></i> Vulnerability Assessment</div>
-          <div class="tech-item"><i class="fas fa-microchip"></i> IoT Security</div>
-          <div class="tech-item"><i class="fas fa-code"></i> Python & Scripting</div>
+            <h1>IT Support that stays calm under pressure.</h1>
+
+            <p class="headline">
+              I’m Anu Goud, Sydney-based. I’m targeting <b>IT Support Level 1 / Service Desk</b> roles.
+              I build support-relevant proof: structured troubleshooting, documentation, Microsoft 365 fundamentals, and hands-on lab simulations.
+              <b>Full working rights in Australia.</b>
+            </p>
+
+            <div class="pill-row" aria-label="Highlights">
+              <span class="pill"><i class="fa-solid fa-location-dot"></i> Sydney, AU</span>
+              <span class="pill"><i class="fa-solid fa-headset"></i> Service Desk / L1 Support</span>
+              <span class="pill"><i class="fa-brands fa-microsoft"></i> Microsoft 365 (MS-900)</span>
+              <span class="pill"><i class="fa-solid fa-screwdriver-wrench"></i> Troubleshooting + Docs</span>
+            </div>
+
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="btn primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+              <a class="btn" href="https://www.linkedin.com/in/anudeep-goud-8592b4230" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a class="btn" href="https://github.com/Anu-osi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a class="btn" href="https://anulabs.co" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Website</a>
+              <!-- Optional: if you host resume.pdf in same repo -->
+              <a class="btn" href="resume.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-arrow-down"></i> Resume PDF</a>
+            </div>
+
+            <div class="terminal" aria-label="Status strip">
+              <span class="prompt">anu@support</span><span>:</span><span>~</span><span>$</span>
+              <span id="termText">triage → troubleshoot → document → resolve</span>
+              <span class="cursor" aria-hidden="true"></span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="about-image">
-        <img src="photo.jpg" alt="Anudeep Goud" class="profile-img">
-      </div>
-    </div>
-  </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Core Competencies</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Defensive Security (Blue Team)</h3>
-        <ul>
-           <li><b>SIEM:</b> Splunk (Advanced), ELK Stack</li>
-           <li><b>Frameworks:</b> MITRE ATT&CK, NIST IR</li>
-           <li><b>IDS/IPS:</b> Snort (Rule Writing)</li>
-           <li><b>Analysis:</b> Wireshark, TCPdump</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-bug"></i></div>
-        <h3>Offensive Security (Red Team)</h3>
-        <ul>
-           <li><b>Exploitation:</b> Metasploit, SQLMap</li>
-           <li><b>Password Cracking:</b> John the Ripper, Hashcat</li>
-           <li><b>Scanning:</b> Nmap, Gobuster</li>
-           <li><b>Web App:</b> Burp Suite, OWASP Top 10</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-code"></i></div>
-        <h3>Development & Automation</h3>
-        <ul>
-           <li><b>Python:</b> Network Scanners, Automation Scripts</li>
-           <li><b>Shell Scripting:</b> Bash, PowerShell</li>
-           <li><b>Version Control:</b> Git & GitHub</li>
-           <li><b>Infrastructure:</b> Docker, VirtualBox</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-tools"></i></div>
-        <h3>IT & Systems Administration</h3>
-        <ul>
-            <li><b>OS:</b> Windows Server, Linux (Debian/RHEL)</li>
-            <li><b>Directory Services:</b> Active Directory</li>
-            <li><b>Cloud:</b> AWS (EC2, S3), GCP Basics</li>
-            <li><b>Troubleshooting:</b> Hardware, Software, Networking</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <!-- Right -->
+        <div class="panel profile" aria-label="Profile snapshot">
+          <div class="profile-top">
+            <div class="avatar-wrap">
+              <div class="avatar" title="Replace photo.jpg with your photo">
+                <img src="photo.jpg" alt="Anu Goud portrait (replace photo.jpg)" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(124,92,255,.25), rgba(51,215,255,.18))';">
+              </div>
+              <div class="who">
+                <b>Anu Goud</b>
+                <span>IT Support / Service Desk (Entry-level)</span>
+              </div>
+            </div>
 
-  <!-- Experience Section -->
-  <section id="experience">
-    <h2>Experience & Deployments</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">Jul 2024 - Oct 2024</div>
-        <div class="timeline-content">
-          <h3>IoT Security Intern</h3>
-          <h4>Career-DC (Australia, On-site)</h4>
-          <ul>
-            <li>Engineered and deployed an IoT sensor network for a smart pool monitoring project, utilizing ESP32 devices and a secure cloud dashboard.</li>
-            <li>Achieved a >27% improvement in sensor data accuracy and reduced data transmission latency to <2 seconds through rigorous testing of 15+ wireless configurations.</li>
-            <li>Co-authored a 10-page technical report detailing system architecture, security protocols, and performance metrics for pilot deployment.</li>
-            <li>Gained hands-on expertise in IoT security hardening, MQTT protocol implementation, and embedded device troubleshooting.</li>
-          </ul>
+            <div class="chipline">
+              <span class="chip">Full working rights in Australia</span>
+              <span class="chip">Calm, customer-first communication</span>
+              <span class="chip">Microsoft 365 fundamentals</span>
+            </div>
+          </div>
+
+          <div class="profile-mid" aria-label="Proof metrics">
+            <div class="metric">
+              <div class="k">Hands-on proof</div>
+              <div class="v"><i class="fa-solid fa-flask"></i> 200+ labs completed</div>
+            </div>
+            <div class="metric">
+              <div class="k">Cert focus</div>
+              <div class="v"><i class="fa-brands fa-microsoft"></i> MS-900</div>
+            </div>
+            <div class="metric">
+              <div class="k">Support signal</div>
+              <div class="v"><i class="fa-solid fa-file-lines"></i> Clear documentation</div>
+            </div>
+            <div class="metric">
+              <div class="k">Availability</div>
+              <div class="v"><i class="fa-solid fa-calendar-check"></i> 20–30+ hrs/wk</div>
+            </div>
+          </div>
+
+          <div class="profile-bottom">
+            <div class="section-title" style="margin:0 0 8px;">
+              <h2 style="font-size:14px;margin:0;">Direct contact</h2>
+              <p style="margin:0;">Fastest way to reach me.</p>
+            </div>
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:anudeepgoude@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>anudeepgoude@gmail.com</span>
+              </a>
+              <a class="contact-item" href="tel:+61431523847">
+                <i class="fa-solid fa-phone"></i>
+                <span>+61 431 523 847</span>
+              </a>
+              <a class="contact-item" href="https://www.linkedin.com/in/anudeep-goud-8592b4230" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>linkedin.com/in/anudeep-goud-8592b4230</span>
+              </a>
+            </div>
+          </div>
         </div>
+
       </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2023 - Present</div>
-        <div class="timeline-content">
-          <h3>Security Operations Lab Analyst</h3>
-          <h4>Self-Directed & Lab-Based Training</h4>
-          <ul>
-            <li>Executed 200+ hands-on cybersecurity labs (TryHackMe Top 2%) covering network security, penetration testing, and defensive operations.</li>
-            <li>Designed and managed a home lab environment with SIEM (Splunk), IDS (Snort), and multiple target VMs for practical security analysis.</li>
-            <li>Authored detailed write-ups and documentation for complex lab exploits and defensive configurations on GitHub.</li>
-          </ul>
+
+      <!-- Value -->
+      <section id="value">
+        <div class="section-title">
+          <h2>What I’m built for</h2>
+          <p>Clear story, support-first. No noise.</p>
         </div>
-      </div>
+
+        <div class="grid three">
+          <div class="card">
+            <h3><i class="fa-solid fa-triangle-exclamation" style="color:var(--warn);margin-right:10px;"></i>Triage and prioritisation</h3>
+            <p>I handle issues by severity, impact, and time-to-restore. I don’t guess; I narrow the cause fast.</p>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> isolate: user / device / network / account</li>
+              <li><i class="fa-solid fa-check"></i> reproduce + capture evidence</li>
+              <li><i class="fa-solid fa-check"></i> document + escalate cleanly</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-solid fa-headset" style="color:var(--brand2);margin-right:10px;"></i>User support that doesn’t drain teams</h3>
+            <p>Simple communication, accurate notes, and tidy handovers. Support is a systems job, not a vibe.</p>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> plain-English updates</li>
+              <li><i class="fa-solid fa-check"></i> ticket notes that explain themselves</li>
+              <li><i class="fa-solid fa-check"></i> repeat-issue prevention mindset</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3><i class="fa-brands fa-microsoft" style="color:var(--brand);margin-right:10px;"></i>Microsoft 365 fundamentals</h3>
+            <p>Strong base for service desk workflows in Sydney: identity, accounts, devices, and common productivity issues.</p>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> MS-900 certified</li>
+              <li><i class="fa-solid fa-check"></i> support-focused learning path</li>
+              <li><i class="fa-solid fa-check"></i> clean escalation packages</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <div class="section-title">
+          <h2>Skills (ATS-safe)</h2>
+          <p>Written in hiring language for IT Support Level 1 / Service Desk roles.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>IT Support Core</h3>
+            <div class="tags">
+              <span class="tag">Troubleshooting</span>
+              <span class="tag">Ticket documentation</span>
+              <span class="tag">User support</span>
+              <span class="tag">Escalation</span>
+              <span class="tag">Root cause basics</span>
+              <span class="tag">SLA awareness</span>
+            </div>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> structured problem isolation (account/device/network/app)</li>
+              <li><i class="fa-solid fa-check"></i> clear handover notes (symptoms, steps tried, evidence)</li>
+              <li><i class="fa-solid fa-check"></i> repeat issue reduction through documentation</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Tools / Platforms</h3>
+            <div class="tags">
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Windows</span>
+              <span class="tag">Networking basics</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Virtual labs</span>
+              <span class="tag">Documentation</span>
+            </div>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> MS-900: Microsoft 365 fundamentals</li>
+              <li><i class="fa-solid fa-check"></i> hands-on lab environments for troubleshooting practice</li>
+              <li><i class="fa-solid fa-check"></i> evidence-first approach (logs, screenshots, reproduction)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="section-title">
+          <h2>Support-focused projects</h2>
+          <p>These are framed for IT support outcomes, not “security flex.” Replace links as you publish each project.</p>
+        </div>
+
+        <div class="grid three">
+          <div class="card project">
+            <div class="top">
+              <div>
+                <h3>Microsoft 365 Support Scenarios</h3>
+                <p>Common user issues mapped to clear triage steps and resolution notes.</p>
+              </div>
+              <span class="badge">Service Desk</span>
+            </div>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> symptom → cause tree (account/licence/device/app)</li>
+              <li><i class="fa-solid fa-check"></i> “what to capture before escalation” checklist</li>
+              <li><i class="fa-solid fa-check"></i> reusable ticket templates</li>
+            </ul>
+            <div class="links">
+              <a class="mini" href="https://github.com/Anu-osi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+              <a class="mini" href="https://anulabs.co" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Site</a>
+            </div>
+          </div>
+
+          <div class="card project">
+            <div class="top">
+              <div>
+                <h3>Troubleshooting Playbooks</h3>
+                <p>Step-by-step playbooks for recurring desktop and connectivity issues.</p>
+              </div>
+              <span class="badge">L1 Ready</span>
+            </div>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> Wi-Fi / DNS / VPN basics triage flow</li>
+              <li><i class="fa-solid fa-check"></i> evidence capture + rollback steps</li>
+              <li><i class="fa-solid fa-check"></i> prevention notes for repeat tickets</li>
+            </ul>
+            <div class="links">
+              <a class="mini" href="https://github.com/Anu-osi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
+            </div>
+          </div>
+
+          <div class="card project">
+            <div class="top">
+              <div>
+                <h3>Practera Industry Project (MIT Sydney)</h3>
+                <p>Team-based project experience: planning, delivery, communication, documentation.</p>
+              </div>
+              <span class="badge">Project Delivery</span>
+            </div>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> role clarity + written updates</li>
+              <li><i class="fa-solid fa-check"></i> documentation-first delivery style</li>
+              <li><i class="fa-solid fa-check"></i> stakeholder-friendly summaries</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Important note (so this stays recruiter-safe)</h3>
+          <p>
+            I keep everything interview-defensible. If I claim a tool, I can explain what I did with it, what broke, how I proved the cause, and what I documented.
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <div class="section-title">
+          <h2>Experience snapshot</h2>
+          <p>Support employers care about consistency, communication, and reliable execution.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="list">
+              <li><i class="fa-solid fa-graduation-cap"></i> Bachelor of Networking (Cybersecurity major) — MIT Sydney (Completed March 2025)</li>
+              <li><i class="fa-solid fa-graduation-cap"></i> Master of ICT (Research) — MIT Sydney (Started 2025; first semester completed; research phase starting)</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Sydney</span>
+              <span class="tag">Research discipline</span>
+              <span class="tag">Documentation</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Work readiness</h3>
+            <ul class="list">
+              <li><i class="fa-solid fa-check"></i> Available for 20–30+ hours/week (part-time or full-time)</li>
+              <li><i class="fa-solid fa-check"></i> Focus: pure IT Support / Service Desk (entry-level)</li>
+              <li><i class="fa-solid fa-check"></i> Full working rights in Australia</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Reliability</span>
+              <span class="tag">Fast learner</span>
+              <span class="tag">User-first</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certs">
+        <div class="section-title">
+          <h2>Certifications</h2>
+          <p>Selected for IT support relevance. Keep it tight.</p>
+        </div>
+
+        <div class="grid three">
+          <div class="card">
+            <h3><i class="fa-brands fa-microsoft" style="color:var(--brand);margin-right:10px;"></i>Microsoft 365 (MS-900)</h3>
+            <p>Microsoft 365 fundamentals aligned to common service desk environments.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-brands fa-google" style="color:var(--brand2);margin-right:10px;"></i>Google IT Support</h3>
+            <p>Foundation across troubleshooting, systems, and support workflows.</p>
+          </div>
+          <div class="card">
+            <h3><i class="fa-solid fa-flask" style="color:var(--ok);margin-right:10px;"></i>Hands-on labs</h3>
+            <p>200+ labs completed (kept support-relevant in presentation).</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>What I intentionally downplay</h3>
+          <p>
+            Anything that signals “security-only” or “I’ll leave soon.” This site is positioned for IT Support hiring pipelines first.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Best response time: email or LinkedIn.</p>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Reach me</h3>
+            <ul class="list">
+              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:anudeepgoude@gmail.com">anudeepgoude@gmail.com</a></li>
+              <li><i class="fa-solid fa-phone"></i> <a href="tel:+61431523847">+61 431 523 847</a></li>
+              <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/anudeep-goud-8592b4230" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><i class="fa-brands fa-github"></i> <a href="https://github.com/Anu-osi" target="_blank" rel="noopener">GitHub</a></li>
+              <li><i class="fa-solid fa-globe"></i> <a href="https://anulabs.co" target="_blank" rel="noopener">anulabs.co</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Quick note for hiring managers</h3>
+            <p>
+              If you want one thing from me: clean triage, clear documentation, and reliable follow-through.
+              I keep the story simple because recruiters remember clarity, not completeness.
+            </p>
+            <div class="tags">
+              <span class="tag">IT Support L1</span>
+              <span class="tag">Service Desk</span>
+              <span class="tag">Sydney</span>
+              <span class="tag">MS-900</span>
+              <span class="tag">Documentation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-grid">
+          <div>
+            <b>Anu Goud</b><br/>
+            <span>IT Support / Service Desk (Sydney) · Full working rights in Australia</span>
+          </div>
+          <div>
+            <span style="font-family:var(--mono);">Last updated:</span>
+            <span id="lastUpdated"></span>
+          </div>
+        </div>
+      </footer>
     </div>
-  </section>
+  </main>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Labs & Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3>SQL Injection Lab (DVWA + SQLMap)</h3>
-        <p>Used SQLMap to exploit and dump DVWA login DB, validated using browser payload. Documented mitigation strategy.</p>
-        <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">View Lab</a>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-network-wired"></i></div>
-        <h3>Packet Capture & Credential Sniffing</h3>
-        <p>Captured traffic in test VM. Filtered HTTP requests, extracted base64 credentials in cleartext using Wireshark and tcpdump.</p>
-        <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">View Lab</a>
-      </div>
-      <div class="card">
-        <div class="card-icon"><i class="fas fa-user-secret"></i></div>
-        <h3>Windows Event Log Analysis</h3>
-        <p>Configured Windows Event Forwarding and analyzed security logs for suspicious activity patterns.</p>
-        <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">View Lab</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="cert-grid">
-      <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=500&q=80" alt="CompTIA Security+" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=CompTIA';">
-        <div class="cert-content">
-          <h3>CompTIA Security+</h3>
-          <div class="cert-date">May 2023 - May 2026</div>
-          <p>Validates baseline security skills and knowledge for IT security professionals.</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="IBM Cybersecurity Analyst" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=IBM';">
-        <div class="cert-content">
-          <h3>IBM Cybersecurity Analyst</h3>
-          <div class="cert-date">2022 - No Expiration</div>
-          <p>Professional certification in cybersecurity analysis and operations.</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500&q=80" alt="Google Cybersecurity" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=Google';">
-        <div class="cert-content">
-          <h3>Google Cybersecurity Certificate</h3>
-          <div class="cert-date">2022 - No Expiration</div>
-          <p>Comprehensive training in cybersecurity fundamentals and best practices.</p>
-        </div>
-      </div>
-      <div class="cert-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="TryHackMe" class="cert-img" onerror="this.onerror=null;this.src='https://placehold.co/500x200/0a0a1a/00f0ff?text=TryHackMe';">
-        <div class="cert-content">
-          <h3>TryHackMe Achievements</h3>
-          <div class="cert-date">Top 2% globally | 200+ Labs</div>
-          <p>Completed extensive hands-on cybersecurity training through practical labs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <div class="social-links">
-      <a href="https://github.com/Anu-osi/Cyber-Labs" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/anudeep-goud-8592b4230" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:anudeepgoude@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-logo">ANULABS</div>
-    <p>Breaking into cybersecurity, one lab at a time.</p>
-    <p>&copy; 2025 Anudeep Goud. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    // Enhanced Matrix Rain Effect
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const nums = '0123456789';
-    const hex = '0123456789ABCDEF';
-    
-    const alphabet = katakana + latin + nums + hex;
-    
-    const fontSize = 18;
-    const columns = canvas.width / fontSize;
-    
-    const rainDrops = [];
-    
-    for (let x = 0; x < columns; x++) {
-      rainDrops[x] = Math.random() * canvas.height;
-    }
-    
-    const draw = () => {
-      ctx.fillStyle = 'rgba(10, 10, 26, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      ctx.fillStyle = '#00ff88';
-      ctx.font = fontSize + 'px monospace';
-      
-      for (let i = 0; i < rainDrops.length; i++) {
-        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-        
-        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          rainDrops[i] = 0;
-        }
-        rainDrops[i]++;
-      }
-    };
-    
-    setInterval(draw, 33);
-    
-    // Terminal Text Effect
-    const terminalText = document.getElementById('terminal-text');
-    const phrases = [
-      'whoami',
-      'ls -la ~/projects',
-      'nmap -sV -T4 target.com',
-      'python exploit.py --target 192.168.1.1',
-      'echo "Security is a process, not a product."',
-      'tail -f /var/log/auth.log | grep "Failed"',
-      'msfconsole -q -x "use exploit/multi/handler;"',
-      'sqlmap -u "http://target.com/page.php?id=1"',
-    ];
-    
-    let currentPhrase = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    let isWaiting = false;
-    
-    function type() {
-      if (isWaiting) return;
-      const currentText = phrases[currentPhrase];
-      
-      if (!isDeleting && currentChar < currentText.length) {
-        terminalText.textContent = currentText.substring(0, currentChar + 1);
-        currentChar++;
-        setTimeout(type, 100);
-      } else if (isDeleting && currentChar > 0) {
-        terminalText.textContent = currentText.substring(0, currentChar - 1);
-        currentChar--;
-        setTimeout(type, 50);
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) {
-          currentPhrase = (currentPhrase + 1) % phrases.length;
-        }
-        isWaiting = true;
-        setTimeout(() => {
-          isWaiting = false;
-          type();
-        }, isDeleting ? 500 : 1500);
-      }
-    };
-    
-    type();
-    
-    // Particles.js Configuration
-    particlesJS('particles-js', {
-      "particles": { "number": { "value": 80, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#00f0ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#00a8ff", "opacity": 0.3, "width": 1 }, "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.8 } }, "push": { "particles_nb": 4 } } }, "retina_detect": true
-    });
+    // Terminal rotation (subtle, not cringe)
+    (function(){
+      const el = document.getElementById('termText');
+      if(!el) return;
+      const lines = [
+        "triage → troubleshoot → document → resolve",
+        "tickets that explain themselves in 10 seconds",
+        "restore service fast, then prevent repeats",
+        "clear handover notes, clean escalation packages"
+      ];
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % lines.length;
+        el.textContent = lines[i];
+      }, 2600);
+    })();
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Add animation to sections when they come into view
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    sections.forEach(section => {
-      section.style.opacity = 0;
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
-    });
-
-    // Dynamic copyright year
-    document.querySelector('footer p:last-of-type').innerHTML = `&copy; ${new Date().getFullYear()} Anudeep Goud. All rights reserved.`;
+    // Footer timestamp
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString(undefined, { year:'numeric', month:'short', day:'2-digit' });
   </script>
+
+  <!--
+    IMPORTANT:
+    - Replace photo.jpg with your real photo file in the same folder.
+    - If you want a Microsoft-themed photo/graphic, keep it subtle:
+      use the MS-900 badge image in the Certs section (optional) but avoid clutter.
+    - If you add any numbers (tickets resolved, time saved), ensure they’re 100% defensible.
+  -->
 </body>
 </html>
