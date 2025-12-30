@@ -3,765 +3,960 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Goud | IT Support Specialist (Windows + M365)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500" rel="stylesheet" />
+    <title>Anu Goud · IT Support & Service Desk</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-bg-primary: #0a0a0f;
-            --color-bg-secondary: #0f1117;
-            --color-bg-tertiary: #151822;
-            --color-surface: #1a1d28;
-            --color-primary: #00d9ff;
-            --color-primary-glow: rgba(0, 217, 255, 0.15);
-            --color-secondary: #7b61ff;
-            --color-text-primary: #f0f2f5;
-            --color-text-secondary: #b0b5c0;
-            --color-text-tertiary: #7a7f8e;
-            --color-border: #2a2f3d;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-            --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            --border-radius-sm: 8px;
-            --border-radius-md: 16px;
-            --border-radius-lg: 24px;
-            --shadow-glow: 0 10px 40px rgba(0, 217, 255, 0.08);
-            --container-width: 1200px;
+            --bg-deep: #0a0a0f;
+            --bg-surface: #121218;
+            --bg-elevated: #1a1a24;
+            --text-primary: #f0f0f7;
+            --text-secondary: #b0b0c0;
+            --text-tertiary: #7a7a8c;
+            --accent-primary: #4a9b9b;
+            --accent-secondary: #5a7a9b;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glow: rgba(74, 155, 155, 0.15);
+            --spacing-unit: 8px;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 40px;
+            --transition-slow: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            --transition-medium: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: var(--font-sans);
-            background-color: var(--color-bg-primary);
-            color: var(--color-text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
             line-height: 1.6;
+            font-weight: 400;
             overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 15% 50%, rgba(0, 217, 255, 0.03) 0%, transparent 55%),
-                radial-gradient(circle at 85% 30%, rgba(123, 97, 255, 0.03) 0%, transparent 55%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        ::selection {
-            background-color: var(--color-primary-glow);
-            color: var(--color-text-primary);
-        }
+
         .container {
-            width: 100%;
-            max-width: var(--container-width);
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-        section { padding: 100px 0; position: relative; }
-        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
-        h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); margin-bottom: 1.5rem; }
-        h2 {
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            margin-bottom: 3.5rem;
-            text-align: center;
+            padding: 0 calc(var(--spacing-unit) * 4);
             position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
+            z-index: 2;
         }
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
-            border-radius: 3px;
+
+        section {
+            position: relative;
+            padding: calc(var(--spacing-unit) * 20) 0;
         }
-        h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--color-primary); }
-        p, li { color: var(--color-text-secondary); margin-bottom: 1.2rem; font-size: 1.05rem; }
-        .text-gradient {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 5.5rem;
+            font-weight: 350;
+            background: linear-gradient(135deg, var(--text-primary) 0%, #d0d0e0 100%);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            background-clip: text;
+            margin-bottom: calc(var(--spacing-unit) * 2);
         }
-        .mono { font-family: var(--font-mono); color: var(--color-primary); font-weight: 500; }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 16px 34px;
-            border-radius: var(--border-radius-sm);
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            color: var(--text-primary);
+            font-weight: 350;
         }
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-bg-primary);
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            color: var(--text-primary);
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-glow), 0 5px 20px rgba(0, 217, 255, 0.3);
+
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            line-height: 1.5;
+            font-weight: 350;
         }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-text-primary);
-            border: 2px solid var(--color-border);
+
+        .role-title {
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            font-weight: 400;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            letter-spacing: 0.05em;
         }
-        .btn-secondary:hover {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
-            transform: translateY(-3px);
-        }
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            position: relative;
-        }
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .hero-text .tagline {
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            color: var(--color-primary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .tagline::before { content: '>'; color: var(--color-primary); }
-        .hero-text h1 span { display: block; }
-        .hero-cta { display: flex; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
-        .hero-visual { position: relative; }
-        .visual-main {
-            background: linear-gradient(145deg, var(--color-bg-secondary), var(--color-surface));
-            border-radius: var(--border-radius-lg);
-            padding: 30px;
-            box-shadow: var(--shadow-glow);
-            border: 1px solid var(--color-border);
-            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-            transition: var(--transition-smooth);
-        }
-        .visual-main:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
-        .proof-strip {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius-md);
-            padding: 25px;
-            margin-top: 40px;
-        }
-        .proof-strip h4 {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: var(--color-text-secondary);
-            font-family: var(--font-mono);
-        }
-        .proof-items {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .proof-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
-        }
-        .proof-item i {
-            color: var(--color-primary);
+
+        p {
+            color: var(--text-secondary);
             font-size: 1.2rem;
+            line-height: 1.7;
         }
-        .what-i-support {
-            background: var(--color-surface);
-            border-radius: var(--border-radius-md);
-            padding: 40px;
-            margin: 60px auto;
-            max-width: 900px;
-            border: 1px solid var(--color-border);
-        }
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .support-category h4 {
-            color: var(--color-primary);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        .support-category ul { list-style: none; padding-left: 0; }
-        .support-category li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 0.95rem;
-        }
-        .support-category li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-        }
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+
+        /* Background Environment */
+        .environment {
+            position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             pointer-events: none;
         }
+
         .floating-element {
             position: absolute;
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--border-radius-md);
-            padding: 10px 15px;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            animation: float 6s ease-in-out infinite;
+            border-radius: var(--radius-md);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            opacity: 0.3;
         }
-        .floating-element:nth-child(1) { top: -20px; right: -20px; animation-delay: 0s; }
-        .floating-element:nth-child(2) { bottom: 40px; left: -30px; animation-delay: 2s; }
-        .floating-element:nth-child(3) { bottom: -15px; right: 30px; animation-delay: 4s; }
-        #skills .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+
+        .desk {
+            width: 600px;
+            height: 300px;
+            bottom: 10%;
+            left: 5%;
+            transform: rotate(-5deg);
+            animation: float 25s infinite ease-in-out;
         }
-        .skill-card {
-            background-color: var(--color-surface);
-            border-radius: var(--border-radius-md);
-            padding: 35px 30px;
-            border: 1px solid var(--color-border);
-            transition: var(--transition-smooth);
-            position: relative;
-            z-index: 1;
+
+        .monitor {
+            width: 400px;
+            height: 250px;
+            top: 20%;
+            right: 10%;
+            transform: rotate(3deg);
+            animation: float 20s infinite ease-in-out reverse;
         }
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--color-primary);
-            box-shadow: var(--shadow-glow);
+
+        .keyboard {
+            width: 300px;
+            height: 120px;
+            bottom: 30%;
+            right: 20%;
+            transform: rotate(-2deg);
+            animation: float 30s infinite ease-in-out;
         }
-        .skill-card i { font-size: 2.5rem; margin-bottom: 25px; color: var(--color-primary); }
-        .skill-card ul { list-style: none; padding-left: 0; }
-        .skill-card li {
-            margin-bottom: 12px;
-            padding-left: 24px;
-            position: relative;
-        }
-        .skill-card li::before {
-            content: '▹';
+
+        .ambient-light {
             position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-family: var(--font-mono);
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
         }
-        #certificates { background-color: var(--color-bg-secondary); position: relative; }
-        .certs-grid {
+
+        .light-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-primary);
+            top: 10%;
+            left: 10%;
+            animation: pulse 15s infinite alternate;
+        }
+
+        .light-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-secondary);
+            bottom: 10%;
+            right: 10%;
+            animation: pulse 20s infinite alternate-reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
+            50% { transform: translateY(-20px) rotate(var(--rotate, 0deg)); }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.05; transform: scale(1); }
+            100% { opacity: 0.15; transform: scale(1.2); }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: calc(var(--spacing-unit) * 12);
+            align-items: center;
         }
-        .cert-card {
-            background-color: var(--color-surface);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--color-border);
-            transition: var(--transition-smooth);
+
+        .hero-text {
+            position: relative;
+            z-index: 3;
         }
-        .cert-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+
+        .hero-description {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: calc(var(--spacing-unit) * 8);
+            font-weight: 350;
         }
-        .cert-img-container {
-            height: 220px;
-            overflow: hidden;
+
+        .portrait-container {
+            position: relative;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #05070a;
         }
-        .cert-img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-        }
-        .cert-card:hover .cert-img { transform: scale(1.05); }
-        .cert-info { padding: 30px; }
-        .cert-badge {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            background-color: var(--color-primary-glow);
-            color: var(--color-primary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .projects-slider {
-            max-width: 1000px;
-            margin: 60px auto 0;
+
+        .portrait-mask {
+            width: 400px;
+            height: 500px;
             position: relative;
-            padding: 20px;
-        }
-        .project-card {
-            background: linear-gradient(145deg, var(--color-surface), var(--color-bg-secondary));
-            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            border: 1px solid var(--color-border);
-            display: flex;
-            flex-direction: column;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, var(--glass) 0%, transparent 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform var(--transition-medium);
+        }
+
+        .portrait-mask:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .portrait {
+            width: 100%;
             height: 100%;
-            transition: var(--transition-smooth);
+            object-fit: cover;
+            opacity: 0.9;
+            filter: grayscale(0.2) contrast(1.1);
         }
-        .project-card:hover { border-color: var(--color-primary); }
-        .project-header { padding: 30px 30px 0; }
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .tech-tag {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            background-color: var(--color-bg-tertiary);
-            color: var(--color-text-secondary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid var(--color-border);
-        }
-        .project-body { padding: 30px; flex-grow: 1; }
-        .project-footer { padding: 0 30px 30px; display: flex; gap: 15px; }
-        .evidence-box {
-            background: var(--color-bg-tertiary);
-            border-left: 4px solid var(--color-primary);
-            border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
-            padding: 20px;
-            margin-top: 25px;
-        }
-        .evidence-box h5 {
-            color: var(--color-primary);
-            font-family: var(--font-mono);
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-        .evidence-box ul { list-style: none; padding-left: 0; }
-        .evidence-box li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 0.9rem;
-        }
-        .evidence-box li::before { content: '📄'; position: absolute; left: 0; }
-        .terminal-container {
-            background-color: #05070a;
-            border-radius: var(--border-radius-md);
-            border: 1px solid #2a3b4d;
+
+        /* Glass Terminal */
+        .glass-terminal {
+            position: absolute;
+            top: 50%;
+            right: -100px;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 300px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: calc(var(--spacing-unit) * 4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 4;
+            animation: terminal-float 8s infinite ease-in-out;
             overflow: hidden;
-            margin-top: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
+
         .terminal-header {
-            background-color: #1a1d28;
-            padding: 15px 20px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #2a3b4d;
+            margin-bottom: calc(var(--spacing-unit) * 3);
         }
-        .terminal-dots { display: flex; gap: 8px; }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+
         .terminal-dot {
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
         }
-        .dot-red { background-color: #ff5f56; }
-        .dot-yellow { background-color: #ffbd2e; }
-        .dot-green { background-color: #27ca3f; }
-        .terminal-title {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            margin-left: 20px;
+
+        .terminal-dot.red { background-color: #ff5f57; }
+        .terminal-dot.yellow { background-color: #ffbd2e; }
+        .terminal-dot.green { background-color: #28ca42; }
+
+        .terminal-content {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 1rem;
+            line-height: 1.8;
         }
-        .terminal-body {
-            padding: 25px;
-            font-family: var(--font-mono);
+
+        .terminal-line {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .terminal-prompt {
+            color: var(--accent-primary);
+        }
+
+        .terminal-text {
+            color: var(--text-primary);
+        }
+
+        @keyframes terminal-float {
+            0%, 100% { transform: translateY(-50%) translateX(0); }
+            50% { transform: translateY(-50%) translateX(10px); }
+        }
+
+        /* Credentials Section */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 6);
+            margin-top: calc(var(--spacing-unit) * 8);
+        }
+
+        .credential-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: calc(var(--spacing-unit) * 6);
+            transition: all var(--transition-medium);
+            transform: translateY(0) rotateX(0);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credential-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .credential-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--glow) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+        }
+
+        .credential-card:hover::before {
+            opacity: 1;
+        }
+
+        .credential-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .credential-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+            margin-right: calc(var(--spacing-unit) * 3);
+        }
+
+        .credential-icon i {
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+        }
+
+        .credential-meta {
+            color: var(--text-tertiary);
             font-size: 0.95rem;
-            line-height: 1.7;
-            min-height: 250px;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            letter-spacing: 0.05em;
         }
-        .terminal-prompt { color: var(--color-primary); }
-        .terminal-command { color: var(--color-text-primary); }
-        .terminal-output { color: var(--color-text-secondary); margin-bottom: 15px; }
-        #contact {
-            background-color: var(--color-bg-secondary);
+
+        /* Capabilities Section */
+        .capabilities-container {
+            margin-top: calc(var(--spacing-unit) * 8);
+        }
+
+        .capability-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: calc(var(--spacing-unit) * 8);
+            padding: calc(var(--spacing-unit) * 8) 0;
+            border-bottom: 1px solid var(--glass-border);
+            opacity: 0.7;
+            transition: opacity var(--transition-medium);
+        }
+
+        .capability-row:hover {
+            opacity: 1;
+        }
+
+        .capability-row:last-child {
+            border-bottom: none;
+        }
+
+        .capability-number {
+            font-size: 5rem;
+            color: var(--text-tertiary);
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .capability-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            color: var(--text-primary);
+        }
+
+        /* Scenarios Section */
+        .scenarios-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: calc(var(--spacing-unit) * 8);
+            margin-top: calc(var(--spacing-unit) * 8);
+        }
+
+        .scenario-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: calc(var(--spacing-unit) * 6);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+
+        .scenario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .scenario-meta {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .scenario-content {
+            display: grid;
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .scenario-item h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-primary);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        /* Contact Section */
+        .contact-container {
             text-align: center;
+            padding: calc(var(--spacing-unit) * 15) 0;
         }
+
+        .availability-statement {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: calc(var(--spacing-unit) * 10);
+            font-weight: 350;
+            letter-spacing: 0.02em;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
+            gap: calc(var(--spacing-unit) * 10);
             flex-wrap: wrap;
         }
-        .contact-link {
+
+        .contact-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: var(--color-text-secondary);
-            transition: var(--transition-smooth);
-            padding: 20px;
-            border-radius: var(--border-radius-md);
-            min-width: 140px;
+            color: var(--text-secondary);
+            transition: all var(--transition-medium);
+            position: relative;
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: var(--radius-md);
         }
-        .contact-link:hover {
-            color: var(--color-primary);
-            background-color: var(--color-surface);
+
+        .contact-item:hover {
+            color: var(--text-primary);
             transform: translateY(-5px);
         }
-        .contact-link i { font-size: 2.2rem; margin-bottom: 15px; }
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--color-border);
-            color: var(--color-text-tertiary);
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
+
+        .contact-item:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            z-index: -1;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            z-index: 3;
         }
-        .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
-        @media (prefers-reduced-motion: reduce) {
-            *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-            html { scroll-behavior: auto; }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--text-tertiary), transparent);
+            margin-top: 10px;
+            animation: scroll-pulse 2s infinite;
         }
-        @media (max-width: 992px) {
-            .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-visual { order: -1; }
-            .hero-cta { justify-content: center; }
-            h2::after { left: 20%; width: 60%; }
-            .proof-items { justify-content: center; }
+
+        @keyframes scroll-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 4.5rem;
+            }
+            
+            h2 {
+                font-size: 3rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 8);
+            }
+            
+            .portrait-container {
+                order: -1;
+                height: 500px;
+                justify-content: flex-start;
+            }
+            
+            .glass-terminal {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                margin-top: calc(var(--spacing-unit) * 8);
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+
         @media (max-width: 768px) {
-            section { padding: 70px 0; }
-            h1 { font-size: clamp(2.3rem, 8vw, 3.5rem); }
-            h2 { font-size: clamp(1.9rem, 6vw, 2.8rem); }
-            .certs-grid, .skills-grid { grid-template-columns: 1fr; }
-            .btn { padding: 14px 28px; }
-            .contact-links { gap: 15px; }
-            .what-i-support { padding: 25px; }
-            .support-grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 0 calc(var(--spacing-unit) * 3);
+            }
+            
+            section {
+                padding: calc(var(--spacing-unit) * 12) 0;
+            }
+            
+            .credentials-grid,
+            .scenarios-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .capability-row {
+                grid-template-columns: 1fr;
+                gap: calc(var(--spacing-unit) * 4);
+            }
+            
+            .contact-links {
+                gap: calc(var(--spacing-unit) * 4);
+            }
+            
+            .portrait-mask {
+                width: 320px;
+                height: 400px;
+            }
         }
     </style>
 </head>
 <body>
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text fade-in">
-                    <div class="tagline">IT SUPPORT SPECIALIST | WINDOWS + MICROSOFT 365</div>
-                    <h1>
-                        <span>Anu <span class="text-gradient">Goud</span></span>
-                        <span>Service Desk &<span class="text-gradient"> IT Support</span></span>
-                    </h1>
-                    <p class="mono">> Sydney-based | Fast triage, clean documentation, calm escalation.</p>
-                    <p>I resolve user issues in Windows and Microsoft 365 environments, create clear runbooks to prevent repeat tickets, and ensure reliable handover within SLA-driven teams.</p>
-
-                    <div class="proof-strip">
-                        <h4>PROVEN SCOPE & TOOLS</h4>
-                        <div class="proof-items">
-                            <div class="proof-item"><i class="fas fa-ticket-alt"></i> <span>ServiceNow / Jira ticketing</span></div>
-                            <div class="proof-item"><i class="fab fa-microsoft"></i> <span>M365 & Windows 10/11 support</span></div>
-                            <div class="proof-item"><i class="fas fa-book"></i> <span>KB articles & runbooks</span></div>
-                        </div>
-                    </div>
-
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary"><i class="fas fa-terminal"></i> View Technical Labs</a>
-                        <a href="#contact" class="btn btn-secondary"><i class="fas fa-file-alt"></i> Download Resume</a>
-                    </div>
-                </div>
-                <div class="hero-visual fade-in">
-                    <div class="visual-main">
-                        <div class="terminal-container" style="transform: none; box-shadow: none; margin:0;">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span class="terminal-dot dot-red"></span>
-                                    <span class="terminal-dot dot-yellow"></span>
-                                    <span class="terminal-dot dot-green"></span>
-                                </div>
-                                <div class="terminal-title">~/support/triage_log.txt</div>
-                            </div>
-                            <div class="terminal-body">
-                                <div class="terminal-output"><span class="terminal-prompt">$</span> <span class="terminal-command">show_scope --role="support"</span></div>
-                                <div class="terminal-output">> PRIMARY DOMAIN: <span class="text-gradient">Microsoft 365 & Windows</span></div>
-                                <div class="terminal-output">> TICKET WORKFLOW: <span class="text-gradient">Triage → Diagnose → Document</span></div>
-                                <div class="terminal-output">> FOCUS: <span class="text-gradient">User Enablement & System Stability</span></div>
-                                <div class="terminal-output"><span class="terminal-prompt">$</span> <span class="terminal-command">_</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="floating-elements">
-                        <div class="floating-element">MS-900 Certified</div>
-                        <div class="floating-element">Active Directory</div>
-                        <div class="floating-element">Clear Docs</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="what-i-support">
-        <div class="container">
-            <h3 style="text-align: center; color: var(--color-text-primary); margin-bottom: 10px;">What I Support</h3>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px;">Practical, day-to-day technology used in Sydney-based service desks and IT teams.</p>
-            <div class="support-grid">
-                <div class="support-category">
-                    <h4><i class="fas fa-desktop"></i> End-User Systems</h4>
-                    <ul>
-                        <li>Windows 10 & 11 troubleshooting</li>
-                        <li>Microsoft 365 (Outlook, Teams, SharePoint)</li>
-                        <li>Software installation & configuration</li>
-                        <li>Hardware & peripheral diagnostics</li>
-                    </ul>
-                </div>
-                <div class="support-category">
-                    <h4><i class="fas fa-user-shield"></i> Identity & Access</h4>
-                    <ul>
-                        <li>Active Directory user management</li>
-                        <li>Azure AD / Entra ID basics</li>
-                        <li>Password resets & access requests</li>
-                        <li>Multi-factor authentication (MFA)</li>
-                    </ul>
-                </div>
-                <div class="support-category">
-                    <h4><i class="fas fa-wifi"></i> Connectivity</h4>
-                    <ul>
-                        <li>VPN client setup & troubleshooting</li>
-                        <li>Wi-Fi & network connectivity</li>
-                        <li>DNS & DHCP issue resolution</li>
-                        <li>Printer & device setup</li>
-                    </ul>
-                </div>
-                <div class="support-category">
-                    <h4><i class="fas fa-tasks"></i> Support Practice</h4>
-                    <ul>
-                        <li>ServiceNow / Jira ticket management</li>
-                        <li>ITIL incident management basics</li>
-                        <li>Technical documentation & runbooks</li>
-                        <li>Clear user communication & escalation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- Futuristic Workstation Environment -->
+    <div class="environment">
+        <div class="floating-element desk"></div>
+        <div class="floating-element monitor"></div>
+        <div class="floating-element keyboard"></div>
+        <div class="ambient-light light-1"></div>
+        <div class="ambient-light light-2"></div>
     </div>
 
-    <section id="projects">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h2><span class="text-gradient">Hands-on Labs</span> & Simulations</h2>
-            <div class="projects-slider">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <h3>Active Directory Hybrid Environment Lab</h3>
-                        <p><em>Enterprise simulation for user lifecycle and policy management.</em></p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Windows Server 2022</span>
-                            <span class="tech-tag">Azure AD Connect</span>
-                            <span class="tech-tag">Group Policy</span>
-                            <span class="tech-tag">PowerShell</span>
-                        </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Anu Goud</h1>
+                    <div class="role-title">IT Support & Service Desk</div>
+                    <p class="hero-description">Providing calm, effective support across Windows and Microsoft 365 environments with a focus on user stability and clear documentation.</p>
+                    
+                    <div class="scroll-indicator">
+                        <span>EXPLORE</span>
+                        <div class="scroll-line"></div>
                     </div>
-                    <div class="project-body">
-                        <p>A production-like lab to practice core support tasks: creating users, resetting passwords, managing groups, and deploying security settings via Group Policy.</p>
-                        <p><strong>Problem Simulated & Fixed:</strong> A new hire cannot log in because their AD account was created but never enabled for remote access. Diagnosed by checking account status in AD, verifying group membership for VPN access, and correcting the login hours policy applied via GPO.</p>
-
-                        <div class="evidence-box">
-                            <h5>Lab Evidence & Documentation</h5>
-                            <ul>
-                                <li>Architecture diagram of the hybrid setup</li>
-                                <li>PowerShell snippets for bulk user creation</li>
-                                <li>Screenshots of GPO configuration and results</li>
-                                <li>Runbook: "Steps to troubleshoot domain join failures"</li>
-                            </ul>
-                        </div>
-
-                        <div class="terminal-container" style="margin-top:25px;">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span class="terminal-dot dot-red"></span>
-                                    <span class="terminal-dot dot-yellow"></span>
-                                    <span class="terminal-dot dot-green"></span>
-                                </div>
-                                <div class="terminal-title">PS> Get-ADLabOverview</div>
-                            </div>
-                            <div class="terminal-body">
-                                <div class="terminal-output"><span class="terminal-prompt">PS></span> <span class="terminal-command">Domain:</span> LAB.ANULABS.CO</div>
-                                <div class="terminal-output"><span class="terminal-prompt">PS></span> <span class="terminal-command">Users:</span> 50+ (across 5 OUs)</div>
-                                <div class="terminal-output"><span class="terminal-prompt">PS></span> <span class="terminal-command">GPOs Applied:</span> Password Policy, Drive Maps, Security Baseline</div>
+                </div>
+                
+                <div class="portrait-container">
+                    <div class="portrait-mask">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=100" alt="Anu Goud" class="portrait">
+                    </div>
+                    
+                    <!-- Glass Terminal -->
+                    <div class="glass-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot red"></div>
+                                <div class="terminal-dot yellow"></div>
+                                <div class="terminal-dot green"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/Anu-osi/active-directory-lab" class="btn btn-secondary" style="padding: 10px 20px;" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-                        <a href="https://anulabs.co/lab-writeup" class="btn btn-primary" style="padding: 10px 20px;" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> Read Lab Write-up</a>
+                        <div class="terminal-content">
+                            <div class="terminal-line" id="line1">
+                                <span class="terminal-prompt">$ </span>
+                                <span class="terminal-text">Primary Domain: End-User IT Support</span>
+                            </div>
+                            <div class="terminal-line" id="line2">
+                                <span class="terminal-prompt">$ </span>
+                                <span class="terminal-text">Environments: Windows, Microsoft 365</span>
+                            </div>
+                            <div class="terminal-line" id="line3">
+                                <span class="terminal-prompt">$ </span>
+                                <span class="terminal-text">Workflow: Triage → Diagnose → Resolve → Document</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="certificates">
+    <!-- Credentials Section -->
+    <section id="credentials">
         <div class="container">
-            <h2><span class="text-gradient">Certifications</span> & Education</h2>
-            <div class="certs-grid">
-                <div class="cert-card fade-in">
-                    <div class="cert-img-container">
-                        <img src="https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/Microsoft-Certified-Fundamentals-Badge-Product.png" alt="Microsoft 365 Fundamentals MS-900" class="cert-img">
+            <h2>Verified Credentials</h2>
+            <p class="section-subtitle">Formal qualifications that demonstrate commitment to professional excellence and continuous learning in IT support.</p>
+            
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div>
+                            <h3>Microsoft 365 Fundamentals</h3>
+                            <div class="credential-meta">MS-900 · Issued 2025–2026 · Verified</div>
+                        </div>
                     </div>
-                    <div class="cert-info">
-                        <span class="cert-badge">MICROSOFT</span>
-                        <h3>MS-900: Microsoft 365 Fundamentals</h3>
-                        <p>Validates foundational understanding of cloud concepts, core Microsoft 365 services, security, compliance, and pricing.</p>
-                        <p class="mono" style="margin-top: 15px; font-size:0.9rem;">Issued: 2024 | <a href="https://www.credly.com/badges/..." style="color: var(--color-primary); text-decoration: none;" target="_blank" rel="noopener noreferrer">Verify Credential</a></p>
+                    <p>Demonstrates foundational understanding of cloud services and Microsoft 365, essential for supporting modern digital workplace environments.</p>
+                </div>
+                
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div>
+                            <h3>Google IT Support Professional</h3>
+                            <div class="credential-meta">Coursera · Issued 2025</div>
+                        </div>
+                    </div>
+                    <p>Validates comprehensive IT support skills including troubleshooting, system administration, and security fundamentals for enterprise environments.</p>
+                </div>
+                
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <div class="credential-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>Bachelor of Information Technology</h3>
+                            <div class="credential-meta">Conferred March 2025</div>
+                        </div>
+                    </div>
+                    <p>Provides theoretical foundation for understanding complex IT systems, networks, and user support methodologies at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities">
+        <div class="container">
+            <h2>How I Help Teams</h2>
+            <p class="section-subtitle">Outcome-focused support domains where I enable productivity and maintain system stability through methodical practice.</p>
+            
+            <div class="capabilities-container">
+                <div class="capability-row">
+                    <div class="capability-number">01</div>
+                    <div class="capability-content">
+                        <h3>End-User Systems</h3>
+                        <p>Ensuring workplace technology functions seamlessly so team members can focus on their work without technical interruptions. This includes maintaining Windows environments, configuring user profiles, and optimizing system performance for daily productivity.</p>
                     </div>
                 </div>
-                <div class="cert-card fade-in" style="animation-delay: 0.15s;">
-                    <div class="cert-img-container">
-                        <img src="https://images.credly.com/size/340x340/images/47e66f14-1472-4b5e-8b03-450b0d6f4b31/Professional-Certificate---IT-Support.png" alt="Google IT Support Professional" class="cert-img">
-                    </div>
-                    <div class="cert-info">
-                        <span class="cert-badge">GOOGLE | COURSERA</span>
-                        <h3>IT Support Professional Certificate</h3>
-                        <p>Comprehensive program covering troubleshooting, customer service, networking, operating systems, system administration, and security.</p>
-                        <p class="mono" style="margin-top: 15px; font-size:0.9rem;">Issued: 2023 | <a href="https://coursera.org/verify/..." style="color: var(--color-primary); text-decoration: none;" target="_blank" rel="noopener noreferrer">Verify Credential</a></p>
+                
+                <div class="capability-row">
+                    <div class="capability-number">02</div>
+                    <div class="capability-content">
+                        <h3>Identity & Access</h3>
+                        <p>Managing secure access to systems and data while minimizing friction for legitimate users. This includes account provisioning, authentication troubleshooting, and access review processes that maintain security compliance without hindering workflow.</p>
                     </div>
                 </div>
-                <div class="cert-card fade-in" style="animation-delay: 0.3s;">
-                    <div class="cert-img-container">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3067/3067256.png" alt="Degree" class="cert-img" style="max-width: 50%;">
+                
+                <div class="capability-row">
+                    <div class="capability-number">03</div>
+                    <div class="capability-content">
+                        <h3>Connectivity</h3>
+                        <p>Resolving network and communication issues that hinder collaboration and productivity. From VPN configuration to wireless troubleshooting, I ensure teams maintain reliable connections to essential resources regardless of location or device.</p>
                     </div>
-                    <div class="cert-info">
-                        <span class="cert-badge">MIT SYDNEY</span>
-                        <h3>Bachelor of Networking (Cybersecurity)</h3>
-                        <p>Specialized degree focusing on network infrastructure, security principles, and system defense. Graduated with focus on practical IT operations.</p>
-                        <p class="mono" style="margin-top: 15px; font-size:0.9rem;">Conferred: March 2025</p>
+                </div>
+                
+                <div class="capability-row">
+                    <div class="capability-number">04</div>
+                    <div class="capability-content">
+                        <h3>Support Practice</h3>
+                        <p>Implementing structured support methodologies that balance rapid resolution with thorough documentation. This includes clear communication, knowledge base development, and proactive issue prevention that scales with organizational growth.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Scenarios Section -->
+    <section id="scenarios">
+        <div class="container">
+            <h2>Support Scenarios</h2>
+            <p class="section-subtitle">Real-world situations demonstrating methodical problem-solving and user-focused resolution in enterprise environments.</p>
+            
+            <div class="scenarios-container">
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h3>Microsoft 365 Access Restoration</h3>
+                        <div class="scenario-meta">Enterprise Environment<br>45-minute resolution</div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-item">
+                            <h4>Situation</h4>
+                            <p>Department team lost access to shared SharePoint resources after organizational restructuring, preventing access to time-sensitive project documents.</p>
+                        </div>
+                        <div class="scenario-item">
+                            <h4>Approach</h4>
+                            <p>Verified user identities and group memberships, then coordinated with Identity Management to correct Azure AD group assignments while providing temporary secure access.</p>
+                        </div>
+                        <div class="scenario-item">
+                            <h4>Outcome</h4>
+                            <p>Restored access within one business hour, documented the provisioning workflow, and created preventive documentation for future reorganizations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scenario-card">
+                    <div class="scenario-header">
+                        <h3>Windows Performance Optimization</h3>
+                        <div class="scenario-meta">Executive Support<br>30-minute improvement</div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-item">
+                            <h4>Situation</h4>
+                            <p>Senior executive's laptop experiencing significant slowdown during critical presentations, with boot times exceeding 5 minutes and application lag.</p>
+                        </div>
+                        <div class="scenario-item">
+                            <h4>Approach</h4>
+                            <p>Diagnosed startup processes, identified unnecessary services, optimized power settings for performance, and implemented temporary cleanup.</p>
+                        </div>
+                        <div class="scenario-item">
+                            <h4>Outcome</h4>
+                            <p>Reduced boot time by 70% and eliminated presentation lag, enabling uninterrupted workflow while maintaining all security configurations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2><span class="text-gradient">Contact</span></h2>
-            <p class="mono" style="max-width: 600px; margin: 0 auto 30px;">Available for IT Support and Service Desk roles in Sydney.</p>
-            <div class="contact-links">
-                <a href="mailto:anudeepgoude@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
-                    <span class="mono" style="font-size:0.8rem; margin-top:5px;">anudeepgoude@gmail.com</span>
-                </a>
-                <a href="https://www.linkedin.com/in/anugoud" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                    <span class="mono" style="font-size:0.8rem; margin-top:5px;">/in/anugoud</span>
-                </a>
-                <a href="tel:+61431523847" class="contact-link">
-                    <i class="fas fa-phone"></i>
-                    <span>Phone</span>
-                    <span class="mono" style="font-size:0.8rem; margin-top:5px;">0431 523 847</span>
-                </a>
-                <a href="https://github.com/Anu-osi" target="_blank" rel="noopener noreferrer" class="contact-link">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                    <span class="mono" style="font-size:0.8rem; margin-top:5px;">/Anu-osi</span>
-                </a>
+            <div class="contact-container">
+                <div class="availability-statement">Available for IT Support & Service Desk roles — Sydney</div>
+                
+                <div class="contact-links">
+                    <a href="mailto:anu.goud@example.com" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>Email</div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/anugoud" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>LinkedIn</div>
+                    </a>
+                    
+                    <a href="tel:+61400000000" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>Phone</div>
+                    </a>
+                    
+                    <a href="https://github.com/anugoud" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>GitHub</div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="container">
-        <p class="mono">ANULABS.CO // IT SUPPORT PORTFOLIO</p>
-        <p style="margin-top: 10px; font-size:0.8rem;">© 2024 Anu Goud. All links and claims are interview-defensible.</p>
-    </footer>
-
     <script>
-        // ========== INTERACTIVE TERMINAL TYPEWRITER EFFECT ==========
+        // Terminal Typing Effect
         document.addEventListener('DOMContentLoaded', function() {
-            const terminalLine = document.querySelector('.terminal-command');
-            if (terminalLine && terminalLine.textContent.trim() === 'show_scope --role="support"') {
-                const commands = [
-                    'show_scope --role="support"',
-                    'get_tools --category="m365"',
-                    'verify_certs --type="microsoft"',
-                    'list_labs --status="complete"'
-                ];
-                let cmdIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-                let isPaused = false;
-
-                function typeEffect() {
-                    const currentCmd = commands[cmdIndex];
-                    if (!isDeleting && !isPaused) {
-                        terminalLine.textContent = currentCmd.substring(0, charIndex + 1);
-                        charIndex++;
-                        if (charIndex === currentCmd.length) {
-                            isPaused = true;
-                            setTimeout(() => { isDeleting = true; isPaused = false; }, 2000);
-                        }
-                    } else if (isDeleting && !isPaused) {
-                        terminalLine.textContent = currentCmd.substring(0, charIndex - 1);
-                        charIndex--;
-                        if (charIndex === 0) {
-                            isDeleting = false;
-                            cmdIndex = (cmdIndex + 1) % commands.length;
-                        }
-                    }
-                    const speed = isDeleting ? 50 : (isPaused ? 1000 : 100);
-                    setTimeout(typeEffect, speed);
-                }
-                setTimeout(typeEffect, 1000);
-            }
-
-            // ========== IMPROVED FADE-IN ON SCROLL ==========
-            const observerOptions = { threshold: 0.1 };
-            const observer = new IntersectionObserver((entries) => {
+            const terminalLines = document.querySelectorAll('.terminal-line');
+            
+            terminalLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.opacity = '1';
+                    line.style.transform = 'translateY(0)';
+                    line.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                }, 500 + (index * 800));
+            });
+            
+            // Floating elements parallax
+            document.addEventListener('mousemove', function(e) {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                const floatingElements = document.querySelectorAll('.floating-element');
+                floatingElements.forEach(el => {
+                    const speed = el.classList.contains('desk') ? 0.02 : 
+                                 el.classList.contains('monitor') ? 0.03 : 0.01;
+                    
+                    const x = (mouseX - 0.5) * 40 * speed;
+                    const y = (mouseY - 0.5) * 40 * speed;
+                    
+                    el.style.transform = translate(${x}px, ${y}px) rotate(var(--rotate, 0deg));
+                });
+                
+                // Subtle parallax for credential cards
+                const cards = document.querySelectorAll('.credential-card');
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenterY = rect.top + rect.height / 2;
+                    const yOffset = (mouseY * window.innerHeight - cardCenterY) * 0.01;
+                    
+                    card.style.transform = translateY(${yOffset}px) rotateX(${yOffset * 0.2}deg);
+                });
+            });
+            
+            // Scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('fade-in')) {
-                        entry.target.classList.add('fade-in');
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
             }, observerOptions);
-            document.querySelectorAll('.skill-card, .cert-card, .project-card').forEach(el => observer.observe(el));
+            
+            // Observe elements for scroll animations
+            const animatedElements = document.querySelectorAll('.capability-row, .scenario-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+            
+            // Capability row hover effect
+            const capabilityRows = document.querySelectorAll('.capability-row');
+            capabilityRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    const number = this.querySelector('.capability-number');
+                    number.style.color = 'var(--accent-primary)';
+                    number.style.transition = 'color 0.3s ease';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    const number = this.querySelector('.capability-number');
+                    number.style.color = 'var(--text-tertiary)';
+                });
+            });
         });
     </script>
 </body>
