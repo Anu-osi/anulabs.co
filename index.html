@@ -3,1134 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Goud · IT Support & Service Desk Professional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Anudeep Goode | Service Desk Engineer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-space: #0a0a14;
-            --bg-surface: #141422;
-            --bg-card: #1c1c2e;
-            --bg-highlight: #24243a;
-            --text-primary: #f5f5ff;
-            --text-secondary: #c0c0e0;
-            --text-tertiary: #8a8ab0;
-            --accent-blue: #4a9bff;
-            --accent-teal: #2ac9b8;
-            --accent-purple: #9a7bff;
-            --accent-orange: #ff9a4a;
-            --border: #2d2d4a;
-            --border-light: #3a3a5a;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-@@ -90,19 +83,15 @@
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-            background-image:
-                linear-gradient(var(--glass-border) 1px, transparent 1px),
-                linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
-            background-size: 40px 40px;
-            opacity: 0.03;
-            animation: grid-move 20s linear infinite;
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .floating-elements { position: absolute; width: 100%; height: 100%; }
-
-        .float-element {
-            position: absolute;
-@@ -116,32 +105,9 @@
-            animation-iteration-count: infinite;
-        }
-
-        .float-terminal {
-            width: 300px;
-            height: 200px;
-            top: 15%;
-            right: 10%;
-            animation-name: float-diagonal;
-            animation-delay: 0s;
-        }
-
-        .float-desktop {
-            width: 400px;
-            height: 250px;
-            bottom: 20%;
-            left: 5%;
-            animation-name: float-vertical;
-            animation-delay: 5s;
-        }
-
-        .float-monitor {
-            width: 350px;
-            height: 220px;
-            top: 60%;
-            right: 15%;
-            animation-name: float-horizontal;
-            animation-delay: 10s;
-        }
-        .float-terminal { width: 300px; height: 200px; top: 15%; right: 10%; animation-name: float-diagonal; animation-delay: 0s; }
-        .float-desktop  { width: 400px; height: 250px; bottom: 20%; left: 5%; animation-name: float-vertical; animation-delay: 5s; }
-        .float-monitor  { width: 350px; height: 220px; top: 60%; right: 15%; animation-name: float-horizontal; animation-delay: 10s; }
-
-        .floating-icon {
-            position: absolute;
-@@ -156,35 +122,12 @@
-        .floating-icon:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 6s; }
-        .floating-icon:nth-child(4) { bottom: 30%; right: 5%; animation-delay: 9s; }
-
-        @keyframes bg-pan {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        @keyframes grid-move {
-            0% { transform: translateY(0) translateX(0); }
-            100% { transform: translateY(-40px) translateX(-40px); }
-        }
-
-        @keyframes float-diagonal {
-            0%, 100% { transform: translate(0, 0) rotate(-2deg); }
-            50% { transform: translate(30px, -30px) rotate(-2deg); }
-        }
-
-        @keyframes float-vertical {
-            0%, 100% { transform: translateY(0) rotate(3deg); }
-            50% { transform: translateY(-40px) rotate(3deg); }
-        }
-
-        @keyframes float-horizontal {
-            0%, 100% { transform: translateX(0) rotate(-1deg); }
-            50% { transform: translateX(40px) rotate(-1deg); }
-        }
-
-        @keyframes icon-float {
-            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.2; }
-        }
-        @keyframes bg-pan { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
-        @keyframes grid-move { 0% { transform: translateY(0) translateX(0); } 100% { transform: translateY(-40px) translateX(-40px); } }
-        @keyframes float-diagonal { 0%, 100% { transform: translate(0, 0) rotate(-2deg); } 50% { transform: translate(30px, -30px) rotate(-2deg); } }
-        @keyframes float-vertical  { 0%, 100% { transform: translateY(0) rotate(3deg); } 50% { transform: translateY(-40px) rotate(3deg); } }
-        @keyframes float-horizontal { 0%, 100% { transform: translateX(0) rotate(-1deg); } 50% { transform: translateX(40px) rotate(-1deg); } }
-        @keyframes icon-float { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.1; } 50% { transform: translateY(-20px) rotate(180deg); opacity: 0.2; } }
-
-        /* Typography */
-        h1 {
-@@ -276,9 +219,7 @@
-            align-items: center;
-        }
-
-        .hero-content {
-            position: relative;
-        }
-        .hero-content { position: relative; }
-
-        .hero-terminal {
-            background: linear-gradient(145deg, rgba(28, 28, 46, 0.9), rgba(20, 20, 34, 0.95));
-@@ -302,62 +243,21 @@
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal), var(--accent-purple));
-        }
-
-        .terminal-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .terminal-dots {
-            display: flex;
-            gap: 8px;
-            margin-right: 20px;
-        }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .terminal-header { display: flex; align-items: center; margin-bottom: 30px; }
-        .terminal-dots { display: flex; gap: 8px; margin-right: 20px; }
-        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
-        .terminal-dot:nth-child(1) { background-color: #ff5f57; }
-        .terminal-dot:nth-child(2) { background-color: #ffbd2e; }
-        .terminal-dot:nth-child(3) { background-color: #28ca42; }
-
-        .terminal-title {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .terminal-content {
-            font-family: 'Source Code Pro', monospace;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        .terminal-line {
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        .terminal-prompt {
-            color: var(--accent-teal);
-            margin-right: 10px;
-        }
-
-        .terminal-command {
-            color: var(--accent-blue);
-        }
-
-        .terminal-output {
-            color: var(--text-secondary);
-            margin-left: 20px;
-            display: block;
-        }
-        .terminal-title { font-family: 'JetBrains Mono', monospace; color: var(--text-secondary); font-size: 0.9rem; }
-        .terminal-content { font-family: 'Source Code Pro', monospace; font-size: 1rem; line-height: 1.8; color: var(--text-secondary); }
-        .terminal-line { margin-bottom: 20px; opacity: 0; transform: translateY(10px); }
-        .terminal-prompt { color: var(--accent-teal); margin-right: 10px; }
-        .terminal-command { color: var(--accent-blue); }
-        .terminal-output { color: var(--text-secondary); margin-left: 20px; display: block; }
-
-        /* Portrait: STRAIGHT (no tilt) */
-        .portrait-container {
-            position: absolute;
-            bottom: -40px;
-@@ -368,13 +268,10 @@
-            overflow: hidden;
-            border: 3px solid var(--border);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            transform: rotate(-5deg);
-            transition: transform var(--transition-medium);
-        }
-
-        .portrait-container:hover {
-            transform: rotate(0deg);
-            transition: transform var(--transition-medium);
-        }
-        .portrait-container:hover { transform: rotate(0deg); }
-
-        .portrait {
-            width: 100%;
-@@ -410,11 +307,9 @@
-            box-shadow: 0 10px 20px rgba(74, 155, 255, 0.2);
-        }
-
-        .contact-icon i {
-            font-size: 1.2rem;
-        }
-        .contact-icon i { font-size: 1.2rem; }
-
-        /* Support Flow - Human Written Section */
-        /* Support Flow */
-        .support-flow {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-@@ -450,9 +345,7 @@
-            transition: opacity var(--transition-medium);
-        }
-
-        .flow-step:hover::before {
-            opacity: 1;
-        }
-        .flow-step:hover::before { opacity: 1; }
-
-        .step-number {
-            position: absolute;
-@@ -489,7 +382,7 @@
-            background-clip: text;
-        }
-
-        /* Support Scenarios - Enhanced Design */
-        /* Scenarios */
-        .scenarios-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-@@ -523,12 +416,7 @@
-            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-teal));
-        }
-
-        .scenario-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        .scenario-header { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
-
-        .scenario-icon {
-            width: 60px;
-@@ -548,11 +436,7 @@
-            background-clip: text;
-        }
-
-        .scenario-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        .scenario-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-
-        .scenario-item {
-            padding: 20px;
-@@ -562,9 +446,7 @@
-            transition: transform var(--transition-medium);
-        }
-
-        .scenario-item:hover {
-            transform: translateY(-5px);
-        }
-        .scenario-item:hover { transform: translateY(-5px); }
-
-        .scenario-item h4 {
-            font-size: 0.9rem;
-@@ -577,11 +459,9 @@
-            gap: 8px;
-        }
-
-        .scenario-item h4 i {
-            color: var(--accent-blue);
-        }
-        .scenario-item h4 i { color: var(--accent-blue); }
-
-        /* Project Section */
-        /* Project */
-        .project-card {
-            background: linear-gradient(145deg, rgba(28, 28, 46, 0.8), rgba(20, 20, 34, 0.9));
-            backdrop-filter: blur(10px);
-@@ -603,12 +483,7 @@
-            background: radial-gradient(circle at 30% 20%, rgba(74, 155, 255, 0.1), transparent 50%);
-        }
-
-        .project-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        .project-title { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
-
-        .project-title i {
-            width: 50px;
-@@ -634,18 +509,18 @@
-            margin-top: 30px;
-            font-weight: 500;
-            transition: all var(--transition-medium);
-            position: relative;
-            z-index: 2;
-        }
-
-        .github-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(74, 155, 255, 0.3);
-        }
-
-        .github-link i {
-            font-size: 1.2rem;
-        }
-        .github-link i { font-size: 1.2rem; }
-
-        /* Tickets Section */
-        /* Tickets */
-        .tickets-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-@@ -663,10 +538,7 @@
-            overflow: hidden;
-        }
-
-        .ticket-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-orange);
-        }
-        .ticket-card:hover { transform: translateY(-8px); border-color: var(--accent-orange); }
-
-        .ticket-card::after {
-            content: '';
-@@ -680,9 +552,7 @@
-            transition: transform var(--transition-medium);
-        }
-
-        .ticket-card:hover::after {
-            transform: scaleX(1);
-        }
-        .ticket-card:hover::after { transform: scaleX(1); }
-
-        .ticket-header {
-            display: flex;
-@@ -711,9 +581,10 @@
-            background-clip: text;
-        }
-
-        /* BIGGER screenshot box + image fit */
-        .ticket-screenshot {
-            width: 100%;
-            height: 180px;
-            height: 260px;
-            background: linear-gradient(135deg, var(--bg-surface), var(--bg-highlight));
-            border: 1px solid var(--border);
-            border-radius: 12px;
-@@ -722,19 +593,15 @@
-            overflow: hidden;
-        }
-
-        .ticket-screenshot::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-        .ticket-screenshot img {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(74, 155, 255, 0.1), rgba(154, 123, 255, 0.1));
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
-
-        .ticket-bullets {
-            list-style: none;
-        }
-        .ticket-bullets { list-style: none; }
-
-        .ticket-bullets li {
-            margin-bottom: 12px;
-@@ -753,7 +620,7 @@
-            font-weight: bold;
-        }
-
-        /* Credentials Section */
-        /* Credentials */
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-@@ -789,12 +656,7 @@
-            opacity: 0.1;
-        }
-
-        .credential-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        .credential-header { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
-
-        .credential-icon {
-            width: 70px;
-@@ -814,19 +676,10 @@
-            background-clip: text;
-        }
-
-        .credential-meta {
-            color: var(--text-tertiary);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        .credential-meta { color: var(--text-tertiary); font-size: 0.95rem; margin-bottom: 20px; font-weight: 500; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 80px 0;
-            position: relative;
-        }
-        footer { text-align: center; padding: 80px 0; position: relative; }
-
-        .availability {
-            font-size: 2rem;
-@@ -849,59 +702,24 @@
-            border-radius: 2px;
-        }
-
-        /* Responsive Design */
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .support-flow {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .scenarios-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .tickets-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .credentials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-grid { grid-template-columns: 1fr; gap: 60px; }
-            .support-flow { grid-template-columns: repeat(2, 1fr); }
-            .scenarios-container { grid-template-columns: 1fr; }
-            .tickets-grid { grid-template-columns: repeat(2, 1fr); }
-            .credentials-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-            
-            .support-flow {
-                grid-template-columns: 1fr;
-            }
-            
-            .scenario-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .tickets-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .credentials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2.2rem; }
-            section { padding: 70px 0; }
-            .support-flow { grid-template-columns: 1fr; }
-            .scenario-content { grid-template-columns: 1fr; }
-            .tickets-grid { grid-template-columns: 1fr; }
-            .credentials-grid { grid-template-columns: 1fr; }
-
-            .portrait-container {
-                position: relative;
-                bottom: 0;
-@@ -913,26 +731,11 @@
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-terminal {
-                padding: 30px;
-            }
-            
-            .contact-icons {
-                gap: 15px;
-            }
-            
-            .contact-icon {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-            .container { padding: 0 15px; }
-            h1 { font-size: 2.5rem; }
-            .hero-terminal { padding: 30px; }
-            .contact-icons { gap: 15px; }
-            .contact-icon { padding: 10px 15px; font-size: 0.9rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-@@ -981,7 +784,7 @@
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-name">Anudeep Goode</span>
+                <span class="nav-title">Service Desk Engineer</span>
+            </div>
+            <div class="nav-contact">
+                <a href="tel:0431523847" class="contact-link">
+                    <i class="fas fa-phone"></i> 0431 523 847
+                </a>
+                <a href="mailto:anudeepgoude@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="profile-container">
+                    <img src="IMG_3642.jpeg" alt="Anudeep Goode - IT Support Professional" class="profile-photo">
+                    <div class="availability">
+                        <div class="dot"></div>
+                        <span>Available for service desk roles</span>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-id-card"></i> Contact & Links</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>0431 523 847</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>anudeepgoude@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>anulabs.co</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <h1 class="hero-name">Anudeep Goode</h1>
+                <p class="hero-title">Service Desk Engineer (Level 1)</p>
+                
+                <div class="intro-message">
+                    <p>I provide reliable Level 1 technical support in MSP-style environments, focusing on clear communication, thorough documentation, and systematic problem-solving.</p>
+                    
+                    <div class="experience-highlights">
+                        <div class="highlight">
+                            <div class="highlight-number">30-40</div>
+                            <div class="highlight-text">tickets resolved weekly</div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-number">95%</div>
+                            <div class="highlight-text">SLA compliance rate</div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-number">25+</div>
+                            <div class="highlight-text">users onboarded</div>
                         </div>
                     </div>
                 </div>
                 
+                <div class="key-skills">
+                    <h3><i class="fas fa-tools"></i> Core Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Windows 10/11 Support</span>
+                        <span class="skill-tag">Microsoft 365 Admin</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">macOS Support</span>
+                        <span class="skill-tag">ITSM/Ticketing</span>
+                        <span class="skill-tag">Basic Networking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="hero-terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-@@ -1010,10 +813,11 @@
-                        <div class="terminal-line" id="line4">
-                            <span class="terminal-prompt">$</span>
-                            <span class="terminal-command">Availability_status</span>
-                            <span class="terminal-output">IT Support and Service Desk roles in Sydney with full working rights </span>
-                            <span class="terminal-output">IT Support and Service Desk roles in Sydney with full working rights</span>
+    <!-- Visual Proof Dashboard -->
+    <section class="dashboard">
+        <h2 class="section-title">How I Approach IT Support</h2>
+        <p class="section-subtitle">Practical examples of my troubleshooting methodology</p>
+        
+        <div class="dashboard-grid">
+            <!-- Troubleshooting Simulator -->
+            <div class="proof-card">
+                <div class="card-header">
+                    <div class="card-icon">🔧</div>
+                    <h3>Troubleshooting Process</h3>
+                    <p class="card-subtitle">From ticket to resolution</p>
+                </div>
+                
+                <div class="simulator-container">
+                    <div class="simulator-step current">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h4>User Report</h4>
+                        </div>
+                        <div class="ticket-preview">
+                            <div class="ticket-header">
+                                <span class="ticket-id">INC-0421</span>
+                                <span class="ticket-priority">Priority: Medium</span>
+                            </div>
+                            <div class="ticket-body">
+                                <p><strong>User:</strong> "I can't access the shared drive. Getting 'Access Denied' error."</p>
+                                <p><strong>Impact:</strong> Blocking work on quarterly report</p>
+                            </div>
+                        </div>
+                        <button class="btn-next" data-next="2">Start Diagnosis <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    
+                    <div class="simulator-step" id="step2">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h4>Initial Investigation</h4>
+                        </div>
+                        <div class="diagnosis-flow">
+                            <div class="check-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Verify user account status in AD</span>
+                            </div>
+                            <div class="check-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Check group membership for drive permissions</span>
+                            </div>
+                            <div class="check-item">
+                                <i class="fas fa-times-circle"></i>
+                                <span>User missing from required security group</span>
+                            </div>
+                        </div>
+                        <button class="btn-next" data-next="3">Apply Fix <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    
+                    <div class="simulator-step" id="step3">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h4>Resolution & Follow-up</h4>
+                        </div>
+                        <div class="resolution-animation">
+                            <div class="animation-container">
+                                <div class="permission-status">
+                                    <div class="status-before">
+                                        <h5>Before</h5>
+                                        <div class="status-item denied">Access Denied</div>
+                                    </div>
+                                    <div class="status-transition">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                    </div>
+                                    <div class="status-after">
+                                        <h5>After</h5>
+                                        <div class="status-item granted">Access Granted</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="resolution-notes">
+                                <p><i class="fas fa-clipboard-check"></i> Added user to "Finance_Drive_Access" security group</p>
+                                <p><i class="fas fa-comment"></i> Confirmed access with user</p>
+                                <p><i class="fas fa-file-alt"></i> Documented steps in KB article</p>
+                            </div>
+                        </div>
+                        <button class="btn-restart"><i class="fas fa-redo"></i> Try Another Scenario</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Knowledge Base Example -->
+            <div class="proof-card">
+                <div class="card-header">
+                    <div class="card-icon">📄</div>
+                    <h3>Knowledge Base Documentation</h3>
+                    <p class="card-subtitle">Preventing repeat tickets</p>
+                </div>
+                
+                <div class="kb-visual">
+                    <div class="kb-topic">
+                        <h4>Common Issue: SharePoint Access Denied</h4>
+                        <div class="kb-stats">
+                            <div class="stat">
+                                <div class="stat-value">15</div>
+                                <div class="stat-label">Monthly tickets</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">-73%</div>
+                                <div class="stat-label">After documentation</div>
+                            </div>
                         </div>
                     </div>
                     
-
-                    <!-- Portrait image: put your real file name here -->
-                    <div class="portrait-container">
-                        <img src="photo.jpg" alt="Anu Goud" class="portrait">
+                    <div class="kb-content">
+                        <div class="kb-section">
+                            <h5><i class="fas fa-search"></i> Root Cause Analysis</h5>
+                            <div class="cause-list">
+                                <div class="cause-item">Azure AD group inheritance broken</div>
+                                <div class="cause-item">User removed from security group</div>
+                                <div class="cause-item">Site permissions not syncing</div>
+                            </div>
+                        </div>
+                        
+                        <div class="kb-section">
+                            <h5><i class="fas fa-wrench"></i> Step-by-Step Resolution</h5>
+                            <div class="steps-container">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">Verify user access in Azure AD</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">Check SharePoint site permissions</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">Add to correct security group</div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">Wait 15 minutes for sync</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-@@ -1022,55 +826,45 @@
-        </div>
-    </section>
-
-    <!-- Support Flow - Human Written Section -->
-    <!-- Support Flow -->
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <i class="fas fa-hands-helping"></i>
-                <h2>My Support Process</h2>
-            </div>
-            <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 40px;">
-                Here's how I approach IT support—breaking down problems methodically to get people back to work quickly.
-                Here's how I approach IT support, breaking down problems methodically to get people back to work quickly.
-            </p>
-            
-
-            <div class="support-flow">
-                <div class="flow-step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div class="step-icon"><i class="fas fa-desktop"></i></div>
-                    <h3>End-User Systems</h3>
-                    <p>When someone's computer acts up, I dig into Windows settings, clear up profile issues, and make sure their system runs smoothly again.</p>
+                    
+                    <a href="#" class="view-full-kb">
+                        <i class="fas fa-external-link-alt"></i> View full KB article with screenshots
+                    </a>
                 </div>
-                <div class="flow-step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <div class="step-icon"><i class="fas fa-key"></i></div>
-                    <h3>Identity & Access</h3>
-                    <p>Getting people into the right systems matters.I handle account setups, password resets, and permissions so work isn't held up.</p>
-                    <p>Getting people into the right systems matters. I handle account setups, password resets, and permissions so work isn't held up.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="step-icon"><i class="fas fa-users"></i></div>
-                    <h3>Collaboration Tools</h3>
-                    <p>Teams and SharePoint issues can stall projects.I fix access problems and group settings so everyone can collaborate properly.</p>
-                    <p>Teams and SharePoint issues can stall projects. I fix access problems and group settings so everyone can collaborate properly.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <div class="step-icon"><i class="fas fa-wifi"></i></div>
-                    <h3>Connectivity</h3>
-                    <p>When VPNs drop or Wi-Fi goes wrong , I troubleshoot the connection so people can log in and get back to what they need to do.</p>
-                    <p>When VPNs drop or Wi-Fi goes wrong, I troubleshoot the connection so people can log in and get back to what they need to do.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="step-number">5</div>
-                    <div class="step-icon">
-                        <i class="fas fa-clipboard-list"></i>
-                    </div>
-                    <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
-                    <h3>Support Documentation</h3>
-                    <p>I keep clear notes on fixes so next time we see the same issue, we can resolve it faster and help others learn from it too.</p>
-                </div>
-@@ -1085,13 +879,11 @@
-                <i class="fas fa-tasks"></i>
-                <h2>Real Support Scenarios</h2>
             </div>
             
-
-            <div class="scenarios-container">
-                <div class="scenario-card">
-                    <div class="scenario-header">
-                        <div class="scenario-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="scenario-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>
-                            <h3>SharePoint Access Issue</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.95rem;">Access Management · 45-minute resolution</p>
-@@ -1100,24 +892,22 @@
-                    <div class="scenario-content">
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-exclamation-triangle"></i> Situation</h4>
-                            <p>A Team couldn't access their SharePoint site after a company restructure. They had deadlines Coming.</p>
-                            <p>A team couldn't access their SharePoint site after a company restructure. Deadlines were close.</p>
-                        </div>
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-cogs"></i> What I Did</h4>
-                            <p>Checked group memberships, found the broken links, fixed permissions in Azure AD, and tested access step by step.</p>
-                            <p>Checked group memberships, fixed permissions, and tested access step by step.</p>
-                        </div>
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-check-circle"></i> Outcome</h4>
-                            <p>Everyone got access back within the hour. I wrote up the fix so next time it happens, we can resolve it even faster.</p>
-                            <p>Access was restored quickly. I documented the fix so it could be repeated.</p>
-                        </div>
-                    </div>
+            <!-- Experience Timeline -->
+            <div class="proof-card">
+                <div class="card-header">
+                    <div class="card-icon">💼</div>
+                    <h3>Experience & Projects</h3>
+                    <p class="card-subtitle">Practical application of skills</p>
                 </div>
                 
-
-                <div class="scenario-card">
-                    <div class="scenario-header">
-                        <div class="scenario-icon">
-                            <i class="fas fa-user-plus"></i>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h4>IT Support Intern</h4>
+                            <div class="timeline-company">Baoan Australia</div>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Handled 30-40 tickets weekly with 95% SLA compliance</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Onboarded 25+ staff, reducing setup time by 22%</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Tested wireless configurations across 3 locations</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="scenario-icon"><i class="fas fa-user-plus"></i></div>
-                        <div>
-                            <h3>New Starter Setup</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.95rem;">Onboarding · Complete setup</p>
-@@ -1126,15 +916,15 @@
-                    <div class="scenario-content">
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-exclamation-triangle"></i> Situation</h4>
-                            <p>A new hire needed everything set up for their first day—account, software, access to all the right tools.</p>
-                            <p>A new hire needed account, software, and access ready for day one.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h4>Customer Operations Assistant</h4>
+                            <div class="timeline-company">Woolworths Group</div>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Logged 30-50 incidents per shift with 99% accuracy</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Identified patterns reducing repeat issues by 15%</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-cogs"></i> What I Did</h4>
-                            <p>Created their Microsoft 365 account, set up MFA, added them to distribution lists, and configured their access to Teams and SharePoint.</p>
-                            <p>Created Microsoft 365 account, set MFA, assigned groups, validated Teams/SharePoint access.</p>
-                        </div>
-                        <div class="scenario-item">
-                            <h4><i class="fas fa-check-circle"></i> Outcome</h4>
-                            <p>They logged in on day one with everything working. No delays, no missing permissions—just straight to work.</p>
-                            <p>They started with everything working. No delays, no missing permissions.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h4>IT Support Simulation Lab</h4>
+                            <div class="timeline-company">anulabs.co</div>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Simulated Level 1-2 support workflows</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Resolved SharePoint/Teams access issues</span>
+                                </div>
+                                <div class="achievement">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Created documented resolution guides</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-@@ -1149,15 +939,15 @@
-                <i class="fas fa-project-diagram"></i>
-                <h2>IT Support Lab Project</h2>
             </div>
             
-
-            <div class="project-card">
-                <div class="project-title">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>IT Support & Service Desk Simulation – Microsoft 365 & Windows Environment</h3>
-                </div>
-                <p>I built a practical IT support lab at home to work through real service desk scenarios. In this setup, I managed Microsoft 365 user accounts, sorted out access permissions, handled password resets, and fixed SharePoint site access issues. I also worked through Windows login problems and performance slowdowns—documenting each fix step by step, just like I would on a real help desk.</p>
-                <p>This project gave me hands-on experience with identity management, collaboration platform troubleshooting, and writing clear documentation that someone else could follow if they needed to pick up where I left off.</p>
-                
-                <p>I built a practical IT support lab at home to work through real service desk scenarios. In this setup, I managed Microsoft 365 user accounts, permissions, password resets, SharePoint access issues, and Windows login and performance problems. I documented each fix step by step, like a real help desk workflow.</p>
-                <p>This project gave me hands-on practice with identity and access, collaboration troubleshooting, and writing clear escalation-ready notes.</p>
-
-                <a href="https://github.com/anugoud/project-it-support-m365" class="github-link">
-                    <i class="fab fa-github"></i>
-                    View the full project on GitHub
-@@ -1166,172 +956,166 @@
-        </div>
-    </section>
-
-    <!-- Tickets Section -->
-    <!-- Tickets Section (6 screenshots placed here) -->
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <i class="fas fa-ticket-alt"></i>
-                <h2>Recent Tickets Handled</h2>
-            </div>
-            
-
-            <div class="tickets-grid">
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-key"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-key"></i></div>
-                        <div>
-                            <h3>Password Expired</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Login Issue</p>
-                        </div>
-                    </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-1.jpg" alt="Ticket screenshot 1">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>User couldn't log in—password had expired overnight</li>
-                        <li>Reset password via Microsoft 365 admin center</li>
-                        <li>Confirmed they could log in with the new credentials</li>
-                        <li>User couldn't log in. Password had expired.</li>
-                        <li>Reset password via Microsoft 365 admin center.</li>
-                        <li>Confirmed login and access restored.</li>
-                    </ul>
+            <!-- Skills Visualization -->
+            <div class="proof-card">
+                <div class="card-header">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Technical Competencies</h3>
+                    <p class="card-subtitle">Applied in real scenarios</p>
                 </div>
                 
-
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-share-alt"></i></div>
-                        <div>
-                            <h3>SharePoint Access Denied</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Access Issue</p>
-                        </div>
-                    </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-2.jpg" alt="Ticket screenshot 2">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>User reported "Access Denied" to a critical SharePoint site</li>
-                        <li>Verified their group membership and permissions</li>
-                        <li>Added them to the correct security group for that site</li>
-                        <li>User received Access Denied to a SharePoint site.</li>
-                        <li>Verified group membership and permissions.</li>
-                        <li>Added user to the correct security group.</li>
-                    </ul>
-                </div>
-                
-
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-user-plus"></i></div>
-                        <div>
-                            <h3>New User Setup</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Onboarding</p>
+                <div class="skills-visualization">
+                    <div class="skill-category">
+                        <h4>Desktop & OS Support</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">Windows 10/11</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                                <div class="skill-context">Daily troubleshooting, imaging, user support</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">macOS</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                                <div class="skill-context">Basic troubleshooting, user management</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-3.jpg" alt="Ticket screenshot 3">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>Created Microsoft 365 account for a new starter</li>
-                        <li>Assigned the correct Microsoft 365 E3 license</li>
-                        <li>Set up MFA and added them to required distribution lists</li>
-                        <li>Created Microsoft 365 account for a new starter.</li>
-                        <li>Assigned license and configured required access.</li>
-                        <li>Validated Teams and email access.</li>
-                    </ul>
-                </div>
-                
-
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-users"></i></div>
-                        <div>
-                            <h3>Wrong Group Assignment</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Permission Issue</p>
+                    
+                    <div class="skill-category">
+                        <h4>Cloud & Collaboration</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">Microsoft 365</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                                <div class="skill-context">Admin center, user management, Exchange</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Active Directory</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                                <div class="skill-context">User accounts, groups, permissions</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-4.jpg" alt="Ticket screenshot 4">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>User was still in old department groups after transferring</li>
-                        <li>Reviewed their current group memberships thoroughly</li>
-                        <li>Updated groups based on the HR transfer request</li>
-                        <li>User remained in old department groups after transfer.</li>
-                        <li>Audited memberships and removed incorrect groups.</li>
-                        <li>Added correct groups and confirmed access.</li>
-                    </ul>
-                </div>
-                
-
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <div>
-                            <h3>MFA Setup Problem</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Security Issue</p>
+                    
+                    <div class="skill-category">
+                        <h4>Support Tools & Processes</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-name">ITSM / Ticketing</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 88%"></div>
+                                </div>
+                                <div class="skill-context">Incident management, SLA tracking</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Remote Support</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 82%"></div>
+                                </div>
+                                <div class="skill-context">TeamViewer, AnyDesk, Quick Assist</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-5.jpg" alt="Ticket screenshot 5">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>User couldn't set up MFA during their first login</li>
-                        <li>Reset their MFA registration in the admin portal</li>
-                        <li>Talked them through the setup process step by step</li>
-                        <li>User couldn't complete MFA registration on first login.</li>
-                        <li>Reset MFA registration in admin portal.</li>
-                        <li>Guided user through successful setup.</li>
-                    </ul>
-                </div>
-                
-
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="ticket-icon">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <div class="ticket-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <div>
-                            <h3>Slow Windows Performance</h3>
-                            <p style="color: var(--text-tertiary); font-size: 0.9rem;">Performance Issue</p>
-                        </div>
-                    </div>
-                    <div class="ticket-screenshot"></div>
-                    <div class="ticket-screenshot">
-                        <img src="ticket-6.jpg" alt="Ticket screenshot 6">
-                    </div>
-                    <ul class="ticket-bullets">
-                        <li>User complained their computer was running very slowly</li>
-                        <li>Checked startup programs and unnecessary services</li>
-                        <li>Optimized startup items and cleared temporary files</li>
-                        <li>User reported very slow startup and lag.</li>
-                        <li>Checked startup items and background services.</li>
-                        <li>Optimized startup and cleared temp files.</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Credentials Section -->
-    <!-- Credentials -->
-    <section>
-        <div class="container">
-            <div class="section-title">
-                <i class="fas fa-certificate"></i>
-                <h2>Credentials & Education</h2>
+    <!-- Approach & Methodology -->
+    <section class="approach">
+        <h2 class="section-title">My Approach to Service Desk Support</h2>
+        
+        <div class="approach-grid">
+            <div class="approach-card">
+                <div class="approach-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Clear Communication</h3>
+                <p>Explaining technical issues in simple terms, setting realistic expectations, and keeping users informed throughout the resolution process.</p>
+                <div class="approach-example">
+                    <div class="example-header">Example Response:</div>
+                    <div class="example-text">"I understand you can't access the shared drive. Let me check your permissions first - this usually takes about 5-10 minutes to investigate."</div>
+                </div>
             </div>
             
-
-            <div class="credentials-grid">
-                <div class="credential-card">
-                    <div class="credential-header">
-                        <div class="credential-icon">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
-                        <div class="credential-icon"><i class="fab fa-microsoft"></i></div>
-                        <div>
-                            <h3>Microsoft 365 Fundamentals</h3>
-                            <div class="credential-meta">MS-900 · 2025–2026</div>
-                        </div>
-                    </div>
-                    <p>This certification shows I understand how Microsoft 365 works under the hood—not just clicking buttons, but knowing why things work the way they do. It helps me explain cloud services to users in plain language and troubleshoot issues more effectively.</p>
-                    <p>Understanding of Microsoft 365 services, identity concepts, licensing, and core admin workflows that map directly to service desk support.</p>
+            <div class="approach-card">
+                <div class="approach-icon">
+                    <i class="fas fa-clipboard-list"></i>
                 </div>
-                
-
-                <div class="credential-card">
-                    <div class="credential-header">
-                        <div class="credential-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="credential-icon"><i class="fab fa-google"></i></div>
-                        <div>
-                            <h3>Google IT Support Professional</h3>
-                            <div class="credential-meta">Coursera · 2025</div>
-                        </div>
-                    </div>
-                    <p>This course taught me a methodical way to approach IT problems—start with the basics, work through possibilities, document what works. I use this structured thinking every time I tackle a ticket, which means fewer overlooked details and clearer solutions.</p>
-                    <p>Structured troubleshooting approach. Clear isolation, hypothesis testing, and documentation that improves handovers and resolution quality.</p>
+                <h3>Systematic Troubleshooting</h3>
+                <p>Following a structured approach from basic checks to more complex diagnostics, documenting each step for future reference.</p>
+                <div class="approach-example">
+                    <div class="example-header">My Process:</div>
+                    <div class="example-text">1. Verify the issue<br>2. Check common causes<br>3. Test connectivity<br>4. Review permissions<br>5. Document solution</div>
                 </div>
-                
-
-                <div class="credential-card">
-                    <div class="credential-header">
-                        <div class="credential-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="credential-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div>
-                            <h3>Bachelor of Information Technology</h3>
-                            <div class="credential-meta">Conferred March 2025</div>
-                        </div>
-                    </div>
-                    <p>My degree gave me the foundation to see how different systems connect—not just fixing one problem, but understanding how it fits into the bigger picture. That perspective helps me suggest longer-term solutions that prevent issues from coming back.</p>
-                    <p>Foundation across networking, systems, and service operations. Helps connect user issues to underlying systems and reduce repeat incidents.</p>
+            </div>
+            
+            <div class="approach-card">
+                <div class="approach-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Thorough Documentation</h3>
+                <p>Creating clear, reusable knowledge base articles to help users solve common issues and reduce repeat tickets.</p>
+                <div class="approach-example">
+                    <div class="example-header">Documentation Focus:</div>
+                    <div class="example-text">• Step-by-step with screenshots<br>• Common pitfalls to avoid<br>• When to escalate to Level 2</div>
                 </div>
             </div>
         </div>
-@@ -1342,18 +1126,9 @@
-        <div class="container">
-            <div class="availability">Available for IT Support & Service Desk roles — Sydney</div>
-            <div class="contact-icons" style="justify-content: center;">
-                <a href="mailto:anu.goud@example.com" class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+    </section>
+
+    <!-- Certifications & Education -->
+    <section class="certifications">
+        <div class="certs-container">
+            <div class="certs-card">
+                <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                <div class="certs-list">
+                    <div class="cert-item">
+                        <div class="cert-icon">📚</div>
+                        <div class="cert-details">
+                            <h3>Google IT Support Professional Certificate</h3>
+                            <p>Coursera | 2023</p>
+                            <p class="cert-skills">Technical support fundamentals, systems administration, security</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">🔐</div>
+                        <div class="cert-details">
+                            <h3>Microsoft 365 Fundamentals (MS-900)</h3>
+                            <p>Microsoft | In progress</p>
+                            <p class="cert-skills">Cloud concepts, M365 services, security & compliance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="edu-item">
+                    <h3>Bachelor of Information Technology</h3>
+                    <p class="edu-institution">Melbourne Institute of Technology</p>
+                    <p class="edu-focus">Focus on networking, systems administration, and IT support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Let's Connect</h2>
+            <p>I'm currently seeking service desk or Level 1 IT support opportunities where I can contribute to team success through reliable technical support and clear communication.</p>
+            
+            <div class="contact-options">
+                <a href="mailto:anudeepgoude@gmail.com" class="contact-btn primary">
+                    <i class="fas fa-envelope"></i> Email Me
                 </a>
-                <a href="https://linkedin.com/in/anugoud" class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
+                <a href="tel:0431523847" class="contact-btn secondary">
+                    <i class="fas fa-phone"></i> Call: 0431 523 847
                 </a>
-                <a href="tel:+61400000000" class="contact-icon">
-                    <i class="fas fa-phone"></i>
+                <a href="#" class="contact-btn outline">
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://github.com/anugoud" class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:anudeepgoude@gmail.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/anudeep-goud" class="contact-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/anu-osi" class="contact-icon"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <div class="availability-note">
+                <i class="fas fa-info-circle"></i> Available for immediate interviews and can start within two weeks.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-name">Anudeep Goode</div>
+                <div class="footer-title">Service Desk Engineer (Level 1)</div>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:anudeepgoude@gmail.com">anudeepgoude@gmail.com</a>
+                <span class="separator">•</span>
+                <a href="tel:0431523847">0431 523 847</a>
+                <span class="separator">•</span>
+                <a href="https://www.anulabs.co">anulabs.co</a>
+            </div>
+            <div class="footer-note">
+                Portfolio created to demonstrate practical IT support skills and methodologies.
             </div>
         </div>
     </footer>
-@@ -1362,85 +1137,61 @@
-        // Terminal typing animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const terminalLines = document.querySelectorAll('.terminal-line');
-            
 
-            terminalLines.forEach((line, index) => {
-                setTimeout(() => {
-                    line.style.opacity = '1';
-                    line.style.transform = 'translateY(0)';
-                    line.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                }, 500 + (index * 800));
-            });
-            
-
-            // Scroll animation for cards
-            const animateOnScroll = () => {
-                const cards = document.querySelectorAll('.flow-step, .scenario-card, .ticket-card, .credential-card');
-                
-                cards.forEach(card => {
-                    const cardTop = card.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (cardTop < windowHeight - 100) {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            // Set initial state for animation
-
-            const cards = document.querySelectorAll('.flow-step, .scenario-card, .ticket-card, .credential-card');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            });
-            
-
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Initial check
-            
-            // Interactive hover effects for scenario items
-            const scenarioItems = document.querySelectorAll('.scenario-item');
-            scenarioItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.style.transform = 'scale(1.3)';
-                        icon.style.transition = 'transform 0.3s ease';
-                    }
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('i');
-                    if (icon) {
-                        icon.style.transform = 'scale(1)';
-                    }
-                });
-            });
-            
-            animateOnScroll();
-
-            // Parallax effect for floating elements
-            window.addEventListener('mousemove', (e) => {
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
-                
-
-                const floatingElements = document.querySelectorAll('.float-element');
-                floatingElements.forEach((el, index) => {
-                    const speed = 0.02 + (index * 0.01);
-                    const x = (mouseX - 0.5) * 50 * speed;
-                    const y = (mouseY - 0.5) * 50 * speed;
-                    
-                    el.style.transform = `translate(${x}px, ${y}px)`;
-                });
-                
-
-                const floatingIcons = document.querySelectorAll('.floating-icon');
-                floatingIcons.forEach((icon, index) => {
-                    const speed = 0.03 + (index * 0.005);
-                    const x = (mouseX - 0.5) * 30 * speed;
-                    const y = (mouseY - 0.5) * 30 * speed;
-                    
-                    icon.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            });
-            
-            // Add cursor follower for interactive feel
-
-            // Cursor follower
-            const cursorFollower = document.createElement('div');
-            cursorFollower.style.cssText = `
-                position: fixed;
-@@ -1454,21 +1205,20 @@
-                transition: width 0.2s, height 0.2s, border-color 0.2s;
-            `;
-            document.body.appendChild(cursorFollower);
-            
-
-            document.addEventListener('mousemove', (e) => {
-                cursorFollower.style.left = `${e.clientX}px`;
-                cursorFollower.style.top = `${e.clientY}px`;
-            });
-            
-            // Make cursor follower interactive with clickable elements
-
-            const interactiveElements = document.querySelectorAll('a, .flow-step, .scenario-card, .ticket-card, .credential-card');
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursorFollower.style.width = '40px';
-                    cursorFollower.style.height = '40px';
-                    cursorFollower.style.borderColor = 'rgba(74, 155, 255, 0.6)';
-                });
-                
-
-                el.addEventListener('mouseleave', () => {
-                    cursorFollower.style.width = '20px';
-                    cursorFollower.style.height = '20px';
-@@ -1478,4 +1228,4 @@
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html>
 </html>
